@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import {NavLink, Link } from 'react-router-dom'
-import NavItem from './NavItem'
+import React from 'react'
 
-const Header = (props) => {
-    return ( 
-        <ul>
-            // TODO map over a list of menu items from 
-        </ul>
-     );
+import Nav from './Nav'
+
+const Header = () => {
+  return (
+    <nav>
+      {/* Logo element */}
+      <Nav />
+    </nav>
+  )
 }
- 
-export default Header;
+
+export default Header

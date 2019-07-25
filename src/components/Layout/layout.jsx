@@ -1,4 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-// TODO: ADD <Layout /> component that includes <Header /> and <Footer /> components
+import Header from './Header'
+import Footer from './Footer'
+
+const Layout = ({ children }) => {
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
+  )
+}
+
+export default Layout
