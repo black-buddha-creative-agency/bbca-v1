@@ -1,15 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-
-const NavItem = ({className, to, children }) => {
-    return ( 
-        <li>
-            <NavLink exact to={to} className={className}>
-                Link 1
-            </NavLink>
-        </li>
-     );
+const NavItem = ({ className, activeClass, to, children }) => {
+  return (
+    <NavLink exact to={to} className={className} active={activeClass}>
+      Link 1
+    </NavLink>
+  )
 }
- 
-export default NavItem;
+
+export default NavItem

@@ -1,11 +1,13 @@
-// TODO: Add menu data using the following structure:
+// // TODO: Add menu data using the following structure:
 
-// const linkClass = ''
-// const menu = [
-//   {
-//     children: '',
-//     className: linkClass,
-//     to: '',
-//   },
-// ]
-// export default menu
+const linkClass = ''
+const activeClass = ''
+const menu = [
+  {
+    children: '',
+    className: linkClass,
+    activeClass: activeClass,
+    to: ''
+  }
+]
+export default menu
