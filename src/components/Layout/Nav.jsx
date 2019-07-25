@@ -7,11 +7,11 @@ import NavItem from './NavItem'
 
 const Nav = props => {
   return (
-    <ul>
+    <div class="nav-container">
       {menu.map((item, idx) => (
         <NavItem key={idx} {...item} />
       ))}
-    </ul>
+    </div>
   )
 }
 
