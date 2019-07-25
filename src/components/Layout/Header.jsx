@@ -1,12 +1,11 @@
 import React from 'react'
 
-import Nav from './Nav'
+import NavContainer from './NavContainer'
 
 const Header = () => {
   return (
     <nav>
-      {/* Logo element */}
-      <Nav />
+      <NavContainer />
     </nav>
   )
 }

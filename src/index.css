@@ -208,6 +208,11 @@ a:hover {
   transition: all 0.2s ease;
   color: #7c6f6f;
 }
+.active {
+  transition: all 0.2s ease;
+  color: #7c6f6f;
+  font-weight: 900 !important;
+}
 
 ul,
 ol {
