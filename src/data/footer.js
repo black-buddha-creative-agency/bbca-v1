@@ -1,11 +1,16 @@
 // // TODO: Add footer data using the following structure:
 
-const linkClass = ''
+const linkClass = 'footer-link'
 const footer = [
   {
-    children: '',
+    children: 'Instagram',
     className: linkClass,
-    to: ''
+    to: 'https://www.instagram.com/blackbuddhababy'
+  },
+  {
+    children: 'Facebook',
+    className: linkClass,
+    to: 'https://www.facebook.com/blackbuddhababy'
   }
 ]
 export default footer
