@@ -4,10 +4,10 @@ const linkClass = 'nav-link'
 const activeClass = 'active'
 const menu = [
   {
-    children: 'Artists',
+    children: 'About',
     className: linkClass,
     activeClass: activeClass,
-    to: '/artists'
+    to: '/about'
   },
   {
     children: 'Events',
@@ -16,10 +16,10 @@ const menu = [
     to: '/events'
   },
   {
-    children: 'About',
+    children: 'Artists',
     className: linkClass,
     activeClass: activeClass,
-    to: '/about'
+    to: '/artists'
   },
   {
     children: 'Contact',

@@ -18,9 +18,6 @@ const NavContainer = () => {
           </Link>
         </div>
         <div className="nav-column--links">
-          <a className="nav-link" href="#About">
-            About
-          </a>
           {menu.map((item, idx) => (
             <NavItem key={idx} {...item} />
           ))}
