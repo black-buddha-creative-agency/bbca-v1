@@ -1,22 +1,19 @@
 import React from 'react'
 import arrow from '../../SVG/Arrow.svg'
 import hero from '../../SVG/hero.jpg'
-const Hero = () => {
+const Hero = ({ body, title, href }) => {
   return (
     <>
       <section className="section-hero">
         <div className="section-container--hero">
           <div className="grid-layout grid-container--hero">
             <div className="grid-block--hero grid-span">
-              <h1 className="text-h1">
-                An agency fostering engagement, education and investment in
-                creative arts
-              </h1>
+              <h1 className="text-h1">{body}</h1>
             </div>
           </div>
         </div>
         <div className="hero-arrow--section">
-          <a href="#About" className="hero-arrow--link-block">
+          <a href={href} className="hero-arrow--link-block">
             <img
               src={arrow}
               alt="arrow"

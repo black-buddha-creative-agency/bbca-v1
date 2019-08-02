@@ -3,12 +3,12 @@
 const linkClass = 'nav-link'
 const activeClass = 'active'
 const menu = [
-  {
-    children: 'About',
-    className: linkClass,
-    activeClass: activeClass,
-    to: '/about'
-  },
+  // {
+  //   children: 'About',
+  //   className: linkClass,
+  //   activeClass: activeClass,
+  //   to: '/about'
+  // },
   {
     children: 'Events',
     className: linkClass,

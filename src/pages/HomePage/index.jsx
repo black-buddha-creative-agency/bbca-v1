@@ -7,7 +7,13 @@ import Contact from '../ContactPage'
 const HomePage = () => {
   return (
     <>
-      <Hero />
+      <Hero
+        title={null}
+        body={
+          ' An agency fostering engagement, education and investment in creative arts'
+        }
+        href={'#About'}
+      />
       <About />
       <Services />
       <Contact />
