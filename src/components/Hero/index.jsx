@@ -1,13 +1,13 @@
 import React from 'react'
-import arrow from '../../SVG/Arrow.svg'
-import hero from '../../SVG/hero.jpg'
-const Hero = ({ body, title, href }) => {
+
+const Hero = ({ body, title, href, arrowImage }) => {
   return (
     <>
       <section className="section-hero">
         <div className="section-container--hero">
           <div className="grid-layout grid-container--hero">
             <div className="grid-block--hero grid-span">
+              <h1 className="mb5">{title}</h1>
               <h1 className="text-h1">{body}</h1>
             </div>
           </div>
@@ -15,7 +15,7 @@ const Hero = ({ body, title, href }) => {
         <div className="hero-arrow--section">
           <a href={href} className="hero-arrow--link-block">
             <img
-              src={arrow}
+              src={require(`../../SVG/${arrowImage}`)}
               alt="arrow"
               className="herodownarrow"
               width="13.5"
@@ -25,14 +25,6 @@ const Hero = ({ body, title, href }) => {
         <div className="hero-image--wrapper">
           <div className="hero-image--container" />
         </div>
-      </section>
-      <section className="mobile-hero--image">
-        <img
-          className="image-break"
-          src={hero}
-          alt="mobile-hero"
-          sizes="100vw"
-        />
       </section>
     </>
   )
