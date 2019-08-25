@@ -1,5 +1,6 @@
 import React from 'react'
 import Section from '../../components/Layout/Section'
+import EventList from '../../components/EventList'
 
 const EventPage = () => {
   return (
@@ -19,13 +20,7 @@ const EventPage = () => {
           </div>
         </article>
         <div className="mt5 event-list--container">
-          <div className="event-list list">
-            <li className="event-list--item justify-between pv3 ba bl-0 bb-0 br-0 b--dotted b--black-30">
-              <p className="text-p1 ">Collect it for the Culture II </p>
-
-              <p className="text-h2">+</p>
-            </li>
-          </div>
+          <EventList />
         </div>
       </div>
     </Section>
