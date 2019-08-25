@@ -7,7 +7,7 @@ const menu = [
     children: 'About',
     className: linkClass,
     activeClass: activeClass,
-    to: '/about'
+    to: '/#About'
   },
   {
     children: 'Events',
