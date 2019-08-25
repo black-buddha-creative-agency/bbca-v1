@@ -1,6 +1,7 @@
 import React from 'react'
 import arrow from '../../SVG/Arrow.svg'
 import hero from '../../SVG/hero.jpg'
+
 const Hero = () => {
   return (
     <>

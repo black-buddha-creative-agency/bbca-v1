@@ -1,16 +1,19 @@
 import React from 'react'
 import Hero from '../../components/Hero'
-import About from '../AboutPage'
-import Services from '../ServicesPage'
-import Contact from '../ContactPage'
+import About from '../../components/About'
+import Services from '../../components/Services'
 
 const HomePage = () => {
   return (
     <>
-      <Hero />
+      <Hero
+        text={
+          'An agency fostering engagement, education and investment in creative arts'
+        }
+        image={'home '}
+      />
       <About />
       <Services />
-      <Contact />
     </>
   )
 }

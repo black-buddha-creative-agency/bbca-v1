@@ -1,6 +1,6 @@
 import React from 'react'
-import Section from '../../components/Layout/Section'
-import ImageSection from '../../components/Layout/ImageSection'
+import Section from '../Layout/Section'
+import ImageSection from '../Layout/ImageSection'
 
 const About = () => {
   return (

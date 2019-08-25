@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Proza+Libre&display=swap');
+
 html,
 body,
 div,
@@ -408,6 +409,14 @@ nav {
   text-align: left;
 }
 
+.text-p1 {
+  margin-top: -12px;
+  margin-bottom: -12px;
+  font-size: 1.5rem;
+  line-height: 56px;
+  font-weight: 400;
+  text-decoration: none;
+}
 .text-p2 {
   margin-top: -12px;
   margin-bottom: -12px;
@@ -491,10 +500,11 @@ nav {
 
 .section-container {
   display: flex;
+  flex-direction: column;
   width: 1470px;
   max-width: 1470px;
-  padding-top: 256px;
-  padding-bottom: 256px;
+  padding-top: 156px;
+  padding-bottom: 156px;
   justify-content: flex-start;
   align-items: flex-start;
 }
@@ -594,7 +604,13 @@ img {
   padding-right: 64px;
   padding-left: 0;
 }
+.event-list--container {
+  width: 100%;
+}
 
+.event-list--item {
+  display: flex;
+}
 .event-collectionList--wrapper {
   margin-top: 32px;
   margin-bottom: 32px;
