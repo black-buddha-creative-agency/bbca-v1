@@ -10,7 +10,7 @@ const NavContainer = () => {
     <div className="nav-container">
       <div className="nav-columns row">
         <div className="nav-column--logo">
-          <Link exact to="/">
+          <Link to="/">
             {' '}
             <h1 className="text-h2">
               BB<span className="text-accent">CA</span>

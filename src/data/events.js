@@ -4,7 +4,7 @@ const events = [
     isOpen: false
   },
   {
-    title: 'Collect it for the Culture II',
+    title: 'The Light Machine',
     isOpen: false
   }
 ]

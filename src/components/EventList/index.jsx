@@ -9,13 +9,26 @@ class EventList extends Component {
   }
 
   handleClick = idx => {
-    this.setState({events: [!!this.state.event]})
+    let events = this.state.events
+
+    events[idx].isOpen = !events[idx].isOpen
+
+    this.setState({
+      events: events
+    })
   }
+
   render() {
     return (
       <div className="event-list list">
-        {this.state.events.map((event, idx) => (
-          <EventListItem title={event.title} handleClick={this.handleClick} />
+        {events.map((event, idx) => (
+          <EventListItem
+            isOpen={event.isOpen}
+            key={idx}
+            idx={idx}
+            title={event.title}
+            handleClick={this.handleClick}
+          />
         ))}
       </div>
     )
