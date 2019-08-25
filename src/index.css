@@ -416,6 +416,7 @@ nav {
   line-height: 56px;
   font-weight: 400;
   text-decoration: none;
+  width: 50%;
 }
 .text-p2 {
   margin-top: -12px;
@@ -610,6 +611,13 @@ img {
 
 .event-list--item {
   display: flex;
+}
+.event-list--item:hover {
+  border-top: #7c6f6f 1px solid;
+}
+.event-list--item:hover p,
+.open {
+  color: #7c6f6f;
 }
 .event-collectionList--wrapper {
   margin-top: 32px;

@@ -23,10 +23,9 @@ class EventList extends Component {
       <div className="event-list list">
         {events.map((event, idx) => (
           <EventListItem
-            isOpen={event.isOpen}
+            event={event}
             key={idx}
             idx={idx}
-            title={event.title}
             handleClick={this.handleClick}
           />
         ))}
