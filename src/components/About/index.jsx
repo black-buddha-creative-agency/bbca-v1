@@ -6,39 +6,40 @@ const About = () => {
   return (
     <>
       <Section id="About">
-        <div className="image-columns w-row">
-          <div className="section-container">
-            <article className="grid-layout grid-container--content">
-              <div className="grid-block--title">
-                <h1 className="text-h2">About</h1>
-              </div>
-              <div className="grid-block--content">
-                <p className="text-p2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Reprehenderit numquam, corrupti explicabo fugit dicta quos
-                  eius nam quod in fuga blanditiis pariatur ex eaque
-                  dignissimos. Nihil minima quis ducimus nisi hic fugiat
-                  aspernatur.
-                  <br />
-                  <br />
-                  Quaerat dignissimos sint omnis fugit, cupiditate totam ipsa
-                  beatae minus sed atque molestiae facere sequi, suscipit amet
-                  ratione autem esse, architecto neque ex?
-                  <br />
-                  <br />
-                  Architecto, sint. Natus ut esse a! Ex alias blanditiis
-                  reiciendis suscipit ipsam minus rem voluptatibus nisi incidunt
-                  consectetur est mollitia sint architecto odit quia, atque
-                  sequi? Officiis perferendis sit hic amet, repudiandae deleniti
-                  est voluptates aspernatur ea unde minus quidem obcaecati.
-                  Optio temporibus ipsa sunt eaque ducimus necessitatibus,
-                  blanditiis dolor explicabo eligendi voluptatem voluptates
-                  nisi, dolorum cupiditate, aliquid vitae quae sequi debitis
-                  ullam id! Obcaecati atque officiis inventore?
-                </p>
-              </div>
-            </article>
-          </div>
+        <div class="section-container">
+          <article class="grid-layout grid-container--content">
+            <div class="grid-block--title">
+              <h1 class="text-h2">About</h1>
+            </div>
+            <div class="grid-block--content">
+              <p class="text-p2">
+                Black Buddha Creative Agency was founded in 2017 by India
+                Lovejoy in Houston, Texas. India Lovejoy is a Houston transplant
+                with a background in events, marketing, and alternative space
+                making.
+                <br />
+                <br />
+                Black Buddha Creative Agency is as a bridge between creatives,
+                collectors, and entrepreneurs by producing exhibitions,
+                organizing events, and offering fine art(ist) services
+                throughout Houston. Black Buddha Creative Agency utilizes
+                various spaces to establish connections and is best known for
+                launching the alternative venue The Union HTX in the Washington
+                Cultural Arts District in 2018.
+                <br />
+                <br />
+                <strong>Selected Press</strong>
+                <br />
+                <a
+                  href="https://www.houstonchronicle.com/life/style/luxe-life/article/India-Lovejoy-builds-bridges-with-the-Union-art-13030375.php"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Houston Chronicle
+                </a>
+              </p>
+            </div>
+          </article>
         </div>
       </Section>
       <ImageSection />
