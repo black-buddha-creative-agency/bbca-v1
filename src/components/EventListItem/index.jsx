@@ -9,6 +9,7 @@ const EventListItem = ({ event, handleClick, idx }) => {
         className="event-list--item justify-between pv3 ba bl-0 bb-0 br-0 b--solid b--black-30"
       >
         <p className="text-p1 title">{title}</p>
+
         <p className="text-h2">{isOpen ? '–' : '+'} </p>
       </li>
       {isOpen ? (
@@ -18,7 +19,10 @@ const EventListItem = ({ event, handleClick, idx }) => {
             <div className=" flex flex-column  justify-between event-detail--text ml3 ">
               <div className="mb5 flex flex-row justify-between">
                 <h2 className="text-p1">What is the plan?</h2>
-                <h2 className="text-p1">{year}</h2>
+                <div className="flex flex-column tr">
+                  <h2 className="text-p1">{year}</h2>
+                  <p>18:30 – 19:30</p>
+                </div>
               </div>
               <div className="mb5 pv3 ba bl-0 bb-0 br-0 b--solid b--black-30">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -43,7 +47,7 @@ const EventListItem = ({ event, handleClick, idx }) => {
                 </div>
                 <div>
                   <a href="/">
-                    <h2 className="text-p2"> Read More</h2>
+                    <h2 className="text-p2"> Read More ></h2>
                   </a>
                 </div>
               </div>

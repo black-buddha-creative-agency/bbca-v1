@@ -411,6 +411,9 @@ nav {
 .text-p1.title {
   width: 50%;
 }
+.text-p1.year {
+  margin-left: -39.5rem;
+}
 
 .text-p1 {
   margin-top: -12px;
