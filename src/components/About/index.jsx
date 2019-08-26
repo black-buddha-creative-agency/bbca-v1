@@ -12,8 +12,8 @@ const About = () => {
               <div className="grid-block--title">
                 <h1 className="text-h2">About</h1>
               </div>
-              <div class="grid-block--content">
-                <p class="text-p2">
+              <div className="grid-block--content">
+                <p className="text-p2">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Reprehenderit numquam, corrupti explicabo fugit dicta quos
                   eius nam quod in fuga blanditiis pariatur ex eaque

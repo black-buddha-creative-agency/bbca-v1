@@ -2,6 +2,7 @@ import React from 'react'
 
 const EventListItem = ({ event, handleClick, idx }) => {
   const { title, year, sponsors, artists, curators, isOpen } = event
+  let currentYear = new Date().getFullYear()
   return (
     <>
       <li
@@ -14,24 +15,57 @@ const EventListItem = ({ event, handleClick, idx }) => {
       </li>
       {isOpen ? (
         <div className="event-detail--container pv3 ba bl-0 bb-0 br-0 b--solid b--black-30">
-          <div className="event-detail--content flex flex-row">
+          <div className="event-detail--content">
             <div className="event-detail--photo mr3"></div>
-            <div className=" flex flex-column  justify-between event-detail--text ml3 ">
-              <div className="mb5 flex flex-row justify-between">
-                <h2 className="text-p1">What is the plan?</h2>
-                <div className="flex flex-column tr">
+            <div className="event-detail--text ml3 ">
+              <div className="mb2 event-detail--header">
+                <h2 className="text-p1">
+                  {year >= currentYear
+                    ? 'What is the plan?'
+                    : 'What was the plan?'}
+                </h2>
+                <div className=" date flex flex-column tr">
                   <h2 className="text-p1">{year}</h2>
                   <p>18:30 – 19:30</p>
                 </div>
               </div>
               <div className="mb5 pv3 ba bl-0 bb-0 br-0 b--solid b--black-30">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Obcaecati, qui accusamus! Nostrum doloribus, vitae, accusamus
-                natus inventore esse, beatae ad tenetur quaerat laborum odit
-                enim ex quia. Ab delectus inventore dolore, nostrum consectetur
-                cupiditate blanditiis natus dolores enim maxime omnis excepturi,
-                voluptatem dicta officia distinctio magnam deleniti corrupti
-                nisi at!
+                <div className=" mv3 flex flex-column">
+                  <p className="text-p2">Sponsors</p>
+                  <div className="mv3 flex flex-row">
+                    {sponsors.map(sponsor => (
+                      <a
+                        className="mr3 pv2"
+                        href={sponsor.link}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        {sponsor.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+                <div className="mv3 flex flex-column">
+                  <p className="text-p2">Artists</p>
+                  <div className="mv3 flex flex-column">
+                    <p className="artists mv2">
+                      {artists.map(artist => (
+                        <>
+                          {artist}
+                          <br />
+                        </>
+                      ))}
+                    </p>
+                  </div>
+                </div>
+                <div className=" mv3 flex flex-column">
+                  <p className="text-p2">Curatorial</p>
+                  <div className="mv3 flex flex-row">
+                    {curators.map(curator => (
+                      <p className="mr3 pv2">{curator}</p>
+                    ))}
+                  </div>
+                </div>
               </div>
               <div className="flex flex-row justify-between">
                 <div>

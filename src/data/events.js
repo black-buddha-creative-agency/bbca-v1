@@ -2,6 +2,7 @@ const events = [
   {
     title: 'The Private Collection',
     year: 2019,
+    description: '',
     sponsors: [
       {
         name: 'Avonak',
@@ -19,6 +20,7 @@ const events = [
   {
     title: 'Collect It For The Culture II',
     year: 2019,
+    description: '',
     sponsors: [
       {
         name: 'Avonak',
@@ -37,6 +39,7 @@ const events = [
   {
     title: 'Summer Union',
     year: 2018,
+    description: '',
     sponsors: [
       {
         name: "Beaver's Restaurant",
@@ -63,6 +66,7 @@ const events = [
   {
     title: 'Collect It For The Culture',
     year: 2018,
+    description: '',
     sponsors: [
       {
         name: "Beaver's Restaurant",
@@ -85,6 +89,7 @@ const events = [
   {
     title: 'MaMa: Women in the Arts',
     year: 2018,
+    description: '',
     sponsors: [
       {
         name: "Beaver's Restaurant",
@@ -106,6 +111,7 @@ const events = [
   {
     title: 'JajaH: The Light Machine, Solo Exhibition',
     year: 2018,
+    description: '',
     sponsors: [
       {
         name: "Beaver's Restaurant",
@@ -133,6 +139,7 @@ const events = [
   {
     title: 'Hurricane Harvey Benefit Exhibition',
     year: 2017,
+    description: '',
     sponsors: [
       {
         name: "D'USSE",
@@ -168,6 +175,7 @@ const events = [
   {
     title: 'An Evening of Art',
     year: 2017,
+    description: '',
     sponsors: [
       {
         name: "D'USSE",
