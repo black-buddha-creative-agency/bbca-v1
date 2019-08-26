@@ -4,12 +4,6 @@ const linkClass = 'nav-link'
 const activeClass = 'active'
 const menu = [
   {
-    children: 'About',
-    className: linkClass,
-    activeClass: activeClass,
-    to: '/#About'
-  },
-  {
     children: 'Events',
     className: linkClass,
     activeClass: activeClass,

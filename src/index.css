@@ -408,6 +408,9 @@ nav {
   align-items: center;
   text-align: left;
 }
+.text-p1.title {
+  width: 50%;
+}
 
 .text-p1 {
   margin-top: -12px;
@@ -416,7 +419,6 @@ nav {
   line-height: 56px;
   font-weight: 400;
   text-decoration: none;
-  width: 50%;
 }
 .text-p2 {
   margin-top: -12px;
@@ -516,7 +518,7 @@ nav {
   justify-items: start;
   align-items: start;
   align-content: center;
-  grid-column-gap: 32px;
+  grid-column-gap: 4rem;
   grid-row-gap: 0;
   grid-template-columns: 1fr 2fr;
 }
@@ -648,7 +650,14 @@ img {
   color: #24272b;
   text-decoration: underline;
 }
-
+.event-detail--text,
+.event-detail--photo {
+  width: 50%;
+}
+.event-detail--photo {
+  background-color: #999;
+  min-height: 400px;
+}
 .section.services {
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
