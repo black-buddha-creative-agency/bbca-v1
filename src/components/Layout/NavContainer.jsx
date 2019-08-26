@@ -10,7 +10,7 @@ const NavContainer = () => {
     <div className="nav-container">
       <div className="nav-columns row">
         <div className="nav-column--logo">
-          <Link exact to="/">
+          <Link to="/">
             {' '}
             <h1 className="text-h2">
               BB<span className="text-accent">CA</span>
@@ -18,6 +18,9 @@ const NavContainer = () => {
           </Link>
         </div>
         <div className="nav-column--links">
+          <a href="/#About" className="nav-link">
+            About
+          </a>
           {menu.map((item, idx) => (
             <NavItem key={idx} {...item} />
           ))}
