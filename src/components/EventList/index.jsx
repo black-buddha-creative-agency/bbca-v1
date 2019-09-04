@@ -9,9 +9,16 @@ class EventList extends Component {
   }
 
   handleClick = idx => {
+    
     let events = this.state.events
-
-    events[idx].isOpen = !events[idx].isOpen
+    let index = idx
+    events.forEach((event, idx) => {
+      if (idx === index) {
+        events[idx].isOpen = !events[idx].isOpen
+      } else {
+        event.isOpen = false
+      }
+    })
 
     this.setState({
       events: events
