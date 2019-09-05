@@ -205,16 +205,16 @@ i {
   background: transparent;
 }
 a {
-  color: #ada4a4;
+  color: #162466;
   text-decoration: none;
 }
 a:hover {
   transition: all 0.2s ease;
-  color: #7c6f6f;
+  color: #080e2b;
 }
 .active {
   transition: all 0.2s ease;
-  color: #7c6f6f;
+  color: #080e2b;
   font-weight: 900 !important;
 }
 
@@ -622,11 +622,11 @@ img {
   display: flex;
 }
 .event-list--item:hover {
-  border-top: #7c6f6f 1px solid;
+  border-top: #162466 1px solid;
 }
 .event-list--item:hover p,
 .open {
-  color: #7c6f6f;
+  color: #162466;
 }
 .event-collectionList--wrapper {
   margin-top: 32px;
@@ -741,7 +741,10 @@ img {
 .section-container.footer-bottom {
   padding-bottom: 72px;
 }
-
+.check {
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
 /*------------------------------------*\
     # Hero
 \*------------------------------------*/
@@ -1303,6 +1306,10 @@ img {
 }
 .text-accent {
   color: #ada4a4;
+}
+
+.text-accent--2 {
+  color: #162466;
 }
 
 /*# sourceMappingURL=index.css.map */

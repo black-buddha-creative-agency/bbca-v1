@@ -4,17 +4,18 @@ import Layout from './components/Layout/index'
 import HomePage from './pages/HomePage'
 import EventsPage from './pages/EventsPage'
 import ArtistsPage from './pages/ArtistsPage'
+import SignUpPage from './pages/SignUpPage'
 
 class App extends Component {
   state = {}
   render() {
     return (
       <Router>
-        <Layout>
-          <Route exact path="/" render={() => <HomePage />} />
-          <Route exact path="/events" render={() => <EventsPage />} />
-          <Route exact path="/artists" render={() => <ArtistsPage />} />
-        </Layout>
+        <Route exact path="/" render={() => <HomePage />} />
+        <Route exact path="/events" render={() => <EventsPage />} />
+        <Route exact path="/artists" render={() => <ArtistsPage />} />
+
+        <Route exact path="/signup" component={SignUpPage} />
       </Router>
     )
   }

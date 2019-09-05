@@ -9,9 +9,12 @@ const Hero = () => {
         <div className="section-container--hero">
           <div className="grid-layout grid-container--hero">
             <div className="grid-block--hero grid-span">
-              <h1 className="text-h1">
-                An agency fostering engagement, education and investment in
-                creative arts
+              <h1 className="text-h1 text-accent--2 ">
+                An agency fostering{' '}
+                <span className="text-accent--2">engagement, </span>
+                <span className="text-accent--2">education</span> and{' '}
+                <span className="text-accent--2"> investment </span>
+                in creative arts
               </h1>
             </div>
           </div>
