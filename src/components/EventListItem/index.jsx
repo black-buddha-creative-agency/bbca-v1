@@ -1,7 +1,7 @@
 import React from 'react'
 
 const EventListItem = ({ event, handleClick, idx }) => {
-  const { title, year, sponsors, artists, curators, isOpen } = event
+  const { title, date, sponsors, artists, curators, isOpen } = event
   let currentYear = new Date().getFullYear()
   return (
     <>
@@ -20,12 +20,12 @@ const EventListItem = ({ event, handleClick, idx }) => {
             <div className="event-detail--text ml3 ">
               <div className="mb2 event-detail--header">
                 <h2 className="text-p1">
-                  {year >= currentYear
+                  {date.year >= currentYear
                     ? 'What is the plan?'
                     : 'What was the plan?'}
                 </h2>
                 <div className=" date flex flex-column tr">
-                  <h2 className="text-p1">{year}</h2>
+                  <h2 className="text-p1">{date.year}</h2>
                   <p>18:30 – 19:30</p>
                 </div>
               </div>
