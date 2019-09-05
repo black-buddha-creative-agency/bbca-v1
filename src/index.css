@@ -210,12 +210,12 @@ a {
 }
 a:hover {
   transition: all 0.2s ease;
-  color: #080e2b;
+  color: #ada4a4;
 }
 .active {
   transition: all 0.2s ease;
   color: #080e2b;
-  font-weight: 900 !important;
+  text-decoration: underline;
 }
 
 ul,
@@ -622,11 +622,13 @@ img {
   display: flex;
 }
 .event-list--item:hover {
-  border-top: #162466 1px solid;
+  transition: all 0.2s ease;
+  border-top: #ada4a4 1px solid;
 }
 .event-list--item:hover p,
 .open {
-  color: #162466;
+  transition: all 0.2s ease;
+  color: #ada4a4;
 }
 .event-collectionList--wrapper {
   margin-top: 32px;
@@ -652,7 +654,18 @@ img {
 .event-collectionList--wrapper.alt.bottom {
   margin-bottom: 64px;
 }
+.event-detail--container {
+  animation: fadeIn 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .event-link {
   color: #24272b;
   text-decoration: underline;
@@ -686,6 +699,7 @@ img {
 \*------------------------------------*/
 
 .artist-list--item:hover {
+  transition: all 0.2s ease;
   color: #7c6f6f;
 }
 

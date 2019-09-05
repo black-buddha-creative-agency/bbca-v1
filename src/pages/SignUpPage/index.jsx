@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Section from '../../components/Layout/Section'
 import Header from '../../components/Layout/Header'
