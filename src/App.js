@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage'
 import EventsPage from './pages/EventsPage'
 import ArtistsPage from './pages/ArtistsPage'
 import SignUpPage from './pages/SignUpPage'
+import LoginPage from './pages/LoginPage'
 
 class App extends Component {
   state = {}
@@ -14,8 +15,8 @@ class App extends Component {
         <Route exact path="/" render={() => <HomePage />} />
         <Route exact path="/events" render={() => <EventsPage />} />
         <Route exact path="/artists" render={() => <ArtistsPage />} />
-
         <Route exact path="/signup" component={SignUpPage} />
+        <Route exact path="/login" component={LoginPage} />
       </Router>
     )
   }

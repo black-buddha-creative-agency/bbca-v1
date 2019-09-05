@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
+import { Link } from 'react-router-dom'
 import Section from '../../components/Layout/Section'
 import Header from '../../components/Layout/Header'
 
@@ -23,16 +23,28 @@ class SignUpPage extends Component {
     event.preventDefault()
 
     //Server request
-    axios.post('/user', {
-      username: this.state.username,
-      password: this.state.password
-    })
-    .then(response => {
+    axios
+      .post('http://www.localhost:3001/users/signup', {
+        username: this.state.username,
+        password: this.state.password
+      })
+      .then(response => {
         console.log(response)
         if (!response.data.errmsg) {
-            console.log('signup success!')
+          console.log('signup success!')
+          this.setState({
+            username: '',
+            password: '',
+            redirectTo: '/login'
+          })
+        } else {
+          console.log('username already taken')
         }
-    })
+      })
+      .catch(error => {
+        console.log('signup error:')
+        console.log(error)
+      })
   }
 
   render() {
@@ -69,10 +81,21 @@ class SignUpPage extends Component {
                   onChange={this.handleChange}
                 />
               </div>
-              <div className="flex flex-">
-                <div className="w-50"></div>
+              <div className="flex flex-end justify-center">
+                <div className="w-50 flex justify-center items-center">
+                  <Link to="/login" className="">
+                    Log in instead?
+                  </Link>
+                </div>
                 <div className="w-50">
-                  <input className="ph3 pv2" type="button" value="Submit" />
+                  <button
+                    className="ph3 pv2"
+                    type="submit"
+                    value="Submit"
+                    onClick={this.handleSubmit}
+                  >
+                    Submit{' '}
+                  </button>
                 </div>
               </div>
             </form>
