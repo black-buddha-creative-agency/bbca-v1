@@ -610,6 +610,10 @@ img {
   padding-right: 64px;
   padding-left: 0;
 }
+/*------------------------------------*\
+    # Event Page Styles
+\*------------------------------------*/
+
 .event-list--container {
   width: 100%;
 }
@@ -677,6 +681,14 @@ img {
   background-color: #999;
   min-height: 25rem;
 }
+/*------------------------------------*\
+    # Artist Page Styles
+\*------------------------------------*/
+
+.artist-list--item:hover {
+  color: #7c6f6f;
+}
+
 .section.services {
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
