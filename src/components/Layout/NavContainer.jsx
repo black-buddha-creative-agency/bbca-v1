@@ -12,7 +12,7 @@ const NavContainer = () => {
         <div className="nav-column--logo">
           <Link to="/">
             {' '}
-            <h1 className="text-h2">
+            <h1 className="text-h2 text-accent--2">
               BB<span className="text-accent">CA</span>
             </h1>
           </Link>

@@ -5,7 +5,8 @@ import Header from '../../components/Layout/Header'
 class LoginPage extends Component {
   formText = {
     page: 'Login',
-    altText: 'Register an account'
+    altText: 'Register an account',
+    link: '/signup'
   }
   render() {
     return (

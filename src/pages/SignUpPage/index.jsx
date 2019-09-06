@@ -12,7 +12,8 @@ class SignUpPage extends Component {
   }
   formText = {
     page: 'Sign Up',
-    altText: 'Log in instead?'
+    altText: 'Log in instead?',
+    link: '/login'
   }
   render() {
     return (
