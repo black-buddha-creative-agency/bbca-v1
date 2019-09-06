@@ -6,13 +6,13 @@ const About = () => {
   return (
     <>
       <Section id="About">
-        <div class="section-container">
-          <article class="grid-layout grid-container--content">
-            <div class="grid-block--title">
-              <h1 class="text-h2">About</h1>
+        <div className="section-container">
+          <article className="grid-layout grid-container--content">
+            <div className="grid-block--title">
+              <h1 className="text-h2">About</h1>
             </div>
-            <div class="grid-block--content">
-              <p class="text-p2">
+            <div className="grid-block--content">
+              <p className="text-p2">
                 Black Buddha Creative Agency was founded in 2017 by India
                 Lovejoy in Houston, Texas. India Lovejoy is a Houston transplant
                 with a background in events, marketing, and alternative space

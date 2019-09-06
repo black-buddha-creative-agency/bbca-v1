@@ -330,6 +330,9 @@ footer {
 /*------------------------------------*\
     # Utilities
 \*------------------------------------*/
+.text-error {
+  color: #971c1c;
+}
 .w-row:before {
   display: table;
   content: ' ';
