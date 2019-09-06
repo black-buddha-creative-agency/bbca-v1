@@ -31,7 +31,7 @@ class EventList extends Component {
   }
 
   render() {
-    return (
+    return this.state.events.length ? (
       <div className="event-list list">
         {this.state.events.map((event, idx) => (
           <EventListItem
@@ -41,6 +41,10 @@ class EventList extends Component {
             handleClick={this.handleClick}
           />
         ))}
+      </div>
+    ) : (
+      <div className="pa5 mt5 tc w-100 h-100 flex flex-row justify-center items-center">
+        <h2 className="text-h2">No events to show...check back soon!</h2>
       </div>
     )
   }

@@ -8,11 +8,14 @@ class LoginPage extends Component {
     altText: 'Register an account',
     link: '/signup'
   }
+  updateMessage = msg => {
+    this.setState({ message: msg })
+  }
   render() {
     return (
       <>
         <Header />
-        <UserForm formText={this.formText} />
+        <UserForm formText={this.formText} updateMessage={this.updateMessage} />
       </>
     )
   }

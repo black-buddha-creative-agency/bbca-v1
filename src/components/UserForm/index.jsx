@@ -35,11 +35,15 @@ class UserForm extends Component {
   }
 
   isFormInvalid() {
-    return !(
-      this.state.first_name &&
-      this.state.username &&
-      this.state.password === this.state.passwordConf
-    )
+    if (this.props.formText.page === 'Sign Up') {
+      return !(
+        this.state.first_name &&
+        this.state.username &&
+        this.state.password === this.state.passwordConf
+      )
+    } else {
+      return !(this.state.username && this.state.password)
+    }
   }
   render() {
     const { formText } = this.props
