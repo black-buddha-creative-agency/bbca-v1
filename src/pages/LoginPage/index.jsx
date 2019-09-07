@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import Header from '../../components/Layout/Header'
 import Section from '../../components/Layout/Section'
 import { Link } from 'react-router-dom'
-import { login } from '../../services/'
+import data from '../../services/'
 
 class LoginPage extends Component {
   state = {
     username: '',
-    password: ''
+    password: '',
+    message: ''
   }
 
   formText = {
@@ -25,6 +26,14 @@ class LoginPage extends Component {
 
   handleSubmit = async event => {
     event.preventDefault()
+    try {
+      await data.login(this.state)
+      this.props.handleSignupOrLogin()
+      this.props.history.push('/')
+    } catch (error) {
+      // Invalid user data (probably duplicate email)
+      this.updateMessage(error.message)
+    }
   }
 
   updateMessage = msg => {
@@ -39,7 +48,7 @@ class LoginPage extends Component {
     const { username, password } = this.state
     const { page, altText, link } = this.formText
     return (
-      <>
+      <>\
         <Header />
         <Section>
           <div className="mt6 tc flex flex-column  check">
@@ -93,6 +102,9 @@ class LoginPage extends Component {
             </form>
           </div>
         </Section>
+        <div className="tc">
+          <p className="mt4 text-error">{this.state.message}</p>
+        </div>
       </>
     )
   }

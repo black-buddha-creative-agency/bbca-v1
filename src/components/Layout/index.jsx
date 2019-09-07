@@ -8,7 +8,7 @@ const Layout = props => {
     <>
       <Header />
       {props.children}
-      <Footer handleLogout={props.handleLogout} user={props.user} />
+      <Footer {...props} />
     </>
   )
 }

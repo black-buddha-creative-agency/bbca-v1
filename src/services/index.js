@@ -21,6 +21,24 @@ function signup(user) {
   )
 }
 
+function login(creds) {
+  return (
+    fetch(BASE_URL + '/users/login', {
+      method: 'POST',
+      headers: new Headers({ 'Content-Type': 'application/json' }),
+      body: JSON.stringify(creds)
+    })
+      .then(res => {
+        // here, the tokenized user is returned by res.json()
+        if (res.ok) return res.json()
+        // Bad Credentials provided
+        throw new Error('The credentials you provided are incorrect')
+      })
+      // here the imported token service is passed the token via .then
+      .then(({ token }) => tokenService.setToken(token))
+  )
+}
+
 function getUser() {
   return tokenService.getUserFromToken()
 }
@@ -59,5 +77,6 @@ export default {
   // getAllSponsors,
   signup,
   getUser,
-  logout
+  logout,
+  login
 }

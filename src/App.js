@@ -18,6 +18,10 @@ class App extends Component {
     data.logout()
     this.setState({ user: null })
   }
+
+  handleSignupOrLogin = () => {
+    this.setState({ user: data.getUser() })
+  }
   render() {
     return (
       <Router>
@@ -51,20 +55,24 @@ class App extends Component {
         <Route
           exact
           path="/signup"
-          render={props => (
+          render={({ history }) => (
             <SignUpPage
+              history={history}
               user={this.state.user}
               handleLogout={this.handleLogout}
+              handleSignupOrLogin={this.handleSignupOrLogin}
             />
           )}
         />
         <Route
           exact
           path="/login"
-          render={props => (
+          render={({ history }) => (
             <LoginPage
+              history={history}
               user={this.state.user}
               handleLogout={this.handleLogout}
+              handleSignupOrLogin={this.handleSignupOrLogin}
             />
           )}
         />

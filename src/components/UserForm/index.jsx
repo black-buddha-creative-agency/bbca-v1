@@ -23,6 +23,7 @@ class UserForm extends Component {
     event.preventDefault()
     try {
       await data.signup(this.state)
+      this.props.handleSignupOrLogin()
       this.props.history.push('/')
     } catch (error) {
       // Invalid user data (probably duplicate email)

@@ -32,14 +32,13 @@ const Footer = props => {
                   <p className="footer-link">
                     Welcome, {props.user.user.first_name}{' '}
                   </p>
-                  <Link to="/buddha" className="footer-link">
-                    Admin Panel
-                  </Link>
-                  <Link
-                    to=""
-                    onClick={props.handleLogout}
-                    className="footer-link"
-                  >
+
+                  {props.user.user.isAdmin ? (
+                    <Link to="/buddha" className="footer-link">
+                      Admin Portal
+                    </Link>
+                  ) : null}
+                  <Link onClick={props.handleLogout} className="footer-link">
                     Log out
                   </Link>
                 </>

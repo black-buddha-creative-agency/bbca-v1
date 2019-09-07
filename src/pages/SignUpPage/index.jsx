@@ -15,6 +15,7 @@ class SignUpPage extends Component {
     altText: 'Log in instead?',
     link: '/login'
   }
+
   render() {
     return (
       <div className="tc">
