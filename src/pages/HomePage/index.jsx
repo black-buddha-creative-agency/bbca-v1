@@ -4,9 +4,9 @@ import About from '../../components/About'
 import Services from '../../components/Services'
 import Layout from '../../components/Layout/'
 
-const HomePage = () => {
+const HomePage = props => {
   return (
-    <Layout>
+    <Layout handleLogout={props.handleLogout} user={props.user}>
       <Hero
         text={
           'An agency fostering engagement, education and investment in creative arts'

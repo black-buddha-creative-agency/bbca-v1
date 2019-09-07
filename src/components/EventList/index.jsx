@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getAllEvents } from '../../services'
+import data from '../../services'
 import EventListItem from '../EventListItem'
 
 class EventList extends Component {
@@ -23,7 +23,7 @@ class EventList extends Component {
     })
   }
   async handleGetEvents() {
-    const events = await getAllEvents()
+    const events = await data.getAllEvents()
     this.setState({ events })
   }
   async componentDidMount() {

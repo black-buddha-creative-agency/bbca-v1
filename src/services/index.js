@@ -1,17 +1,39 @@
+import tokenService from './tokenService'
+
 const BASE_URL = 'http://localhost:3001'
 
-module.exports = {
-  getAllEvents,
-  getAllArtists,
-  // getAllCurators,
-  // getAllSponsors,
-  signup
+// * Service Workers for Auth *//
+
+function signup(user) {
+  return (
+    fetch(BASE_URL + '/users/signup', {
+      method: 'POST',
+      headers: new Headers({ 'Content-Type': 'application/json' }),
+      body: JSON.stringify(user)
+    })
+      .then(res => {
+        // here, the tokenized user is returned by res.json()
+        if (res.ok) return res.json()
+        throw new Error('Username already taken!')
+      })
+      // here the imported token service is passed the token via .then
+      .then(({ token }) => tokenService.setToken(token))
+  )
+}
+
+function getUser() {
+  return tokenService.getUserFromToken()
+}
+
+function logout() {
+  tokenService.removeToken()
 }
 
 // * Get Requests for Page body copy *//
 
 // returns a list of created Events by BBCA
 function getAllEvents() {
+  console.log(tokenService)
   return fetch(`${BASE_URL}/events`).then(res => res.json())
 }
 
@@ -30,17 +52,12 @@ function getAllSponsors() {
   return fetch(`${BASE_URL}/sponsors`).then(res => res.json())
 }
 
-// * Service Workers for Auth *//
-
-function signup(user) {
-  return fetch(BASE_URL + '/users/signup', {
-    method: 'POST',
-    headers: new Headers({ 'Content-Type': 'application/json' }),
-    body: JSON.stringify(user)
-  })
-    .then(res => {
-      if (res.ok) return res.json()
-      throw new Error('Username already taken!')
-    })
-    .then(data => data)
+export default {
+  getAllEvents,
+  getAllArtists,
+  // getAllCurators,
+  // getAllSponsors,
+  signup,
+  getUser,
+  logout
 }

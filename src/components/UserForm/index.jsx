@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Section from '../Layout/Section'
 
-import { signup, login } from '../../services'
+import data from '../../services'
 
 class UserForm extends Component {
   state = {
@@ -22,12 +22,8 @@ class UserForm extends Component {
   handleSubmit = async event => {
     event.preventDefault()
     try {
-      if (this.props.formText.page === 'Sign Up') {
-        await signup(this.state)
-        this.props.history.push('/')
-      } else {
-        console.log('Login not prepared')
-      }
+      await data.signup(this.state)
+      this.props.history.push('/')
     } catch (error) {
       // Invalid user data (probably duplicate email)
       this.props.updateMessage(error.message)
@@ -35,15 +31,11 @@ class UserForm extends Component {
   }
 
   isFormInvalid() {
-    if (this.props.formText.page === 'Sign Up') {
-      return !(
-        this.state.first_name &&
-        this.state.username &&
-        this.state.password === this.state.passwordConf
-      )
-    } else {
-      return !(this.state.username && this.state.password)
-    }
+    return !(
+      this.state.first_name &&
+      this.state.username &&
+      this.state.password === this.state.passwordConf
+    )
   }
   render() {
     const { formText } = this.props
@@ -52,128 +44,78 @@ class UserForm extends Component {
       <Section>
         <div className="mt6 tc flex flex-column  check">
           <h1 className="pa3 text-h2 tc">{formText.page}</h1>
-          {formText.page === 'Sign Up' ? (
-            <form className="w-100" action="" autoComplete="off">
-              <div className="ma4 flex justify-between input">
-                <label className="mr2" htmlFor="first_name">
-                  First Name
-                </label>
-                <input
-                  id="username"
-                  placeholder="First Name"
-                  name="first_name"
-                  type="text"
-                  value={first_name}
-                  onChange={this.handleChange}
-                />
+          <form className="w-100" action="" autoComplete="off">
+            <div className="ma4 flex justify-between input">
+              <label className="mr2" htmlFor="first_name">
+                First Name
+              </label>
+              <input
+                id="username"
+                placeholder="First Name"
+                name="first_name"
+                type="text"
+                value={first_name}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="ma4 flex justify-between input">
+              <label className="mr2" htmlFor="username">
+                Username
+              </label>
+              <input
+                id="username"
+                placeholder="Username"
+                name="username"
+                type="text"
+                value={username}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="ma4 flex justify-between input">
+              <label className="mr2" htmlFor="password">
+                Password
+              </label>
+              <input
+                id="password"
+                placeholder="Password"
+                name="password"
+                type="password"
+                value={password}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="ma4 flex justify-between input">
+              <label className="mr2" htmlFor="passwordConf">
+                Confirm
+              </label>
+              <input
+                id="password"
+                placeholder="Password"
+                name="passwordConf"
+                type="password"
+                value={passwordConf}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="ma4 flex justify-between">
+              <div className="mr2 flex items-center justify-center">
+                <Link to="/login" className="">
+                  {formText.altText}
+                </Link>
               </div>
-              <div className="ma4 flex justify-between input">
-                <label className="mr2" htmlFor="username">
-                  Username
-                </label>
-                <input
-                  id="username"
-                  placeholder="Username"
-                  name="username"
-                  type="text"
-                  value={username}
-                  onChange={this.handleChange}
-                />
+              <div className="">
+                <button
+                  className="ph3 pv2"
+                  type="submit"
+                  value="Submit"
+                  onClick={this.handleSubmit}
+                  disabled={this.isFormInvalid()}
+                >
+                  {formText.page}
+                </button>
               </div>
-              <div className="ma4 flex justify-between input">
-                <label className="mr2" htmlFor="password">
-                  Password
-                </label>
-                <input
-                  id="password"
-                  placeholder="Password"
-                  name="password"
-                  type="password"
-                  value={password}
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="ma4 flex justify-between input">
-                <label className="mr2" htmlFor="passwordConf">
-                  Confirm
-                </label>
-                <input
-                  id="password"
-                  placeholder="Password"
-                  name="passwordConf"
-                  type="password"
-                  value={passwordConf}
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="ma4 flex justify-between">
-                <div className="mr2 flex items-center justify-center">
-                  <Link to="/login" className="">
-                    {formText.altText}
-                  </Link>
-                </div>
-                <div className="">
-                  <button
-                    className="ph3 pv2"
-                    type="submit"
-                    value="Submit"
-                    onClick={this.handleSubmit}
-                    disabled={this.isFormInvalid()}
-                  >
-                    {formText.page}
-                  </button>
-                </div>
-              </div>
-            </form>
-          ) : (
-            <form className="w-100" action="" autoComplete="off">
-              <div className="ma4 flex justify-between input">
-                <label className="mr2" htmlFor="username">
-                  Username
-                </label>
-                <input
-                  id="username"
-                  placeholder="Username"
-                  name="username"
-                  type="text"
-                  value={username}
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="ma4 flex justify-between input">
-                <label className="mr2" htmlFor="password">
-                  Password
-                </label>
-                <input
-                  id="password"
-                  placeholder="Password"
-                  name="password"
-                  type="password"
-                  value={password}
-                  onChange={this.handleChange}
-                />
-              </div>
-
-              <div className="ma4 flex justify-between">
-                <div className="mr2 flex items-center justify-center">
-                  <Link to={formText.link} className="">
-                    {formText.altText}
-                  </Link>
-                </div>
-                <div className="">
-                  <button
-                    className="ph3 pv2"
-                    type="submit"
-                    value="Submit"
-                    onClick={this.handleSubmit}
-                    disabled={this.isFormInvalid()}
-                  >
-                    {formText.page}
-                  </button>
-                </div>
-              </div>
-            </form>
-          )}
+            </div>
+          </form>
         </div>
       </Section>
     )

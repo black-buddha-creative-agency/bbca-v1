@@ -1,11 +1,12 @@
 // * import ReactJS library components
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 // * import bespoke react components
 import footer from '../../data/footer'
 import Contact from '../Contact'
 
-const Footer = () => {
+const Footer = props => {
   return (
     <>
       <Contact />
@@ -26,11 +27,33 @@ const Footer = () => {
               </h1>
             </div>
             <div className="grid-block--footer-right">
+              {props.user ? (
+                <>
+                  <p className="footer-link">
+                    Welcome, {props.user.user.first_name}{' '}
+                  </p>
+                  <Link to="/buddha" className="footer-link">
+                    Admin Panel
+                  </Link>
+                  <Link
+                    to=""
+                    onClick={props.handleLogout}
+                    className="footer-link"
+                  >
+                    Log out
+                  </Link>
+                </>
+              ) : (
+                <Link to="/login" className="footer-link">
+                  Log in
+                </Link>
+              )}
               {footer.map((item, idx) => (
                 <a
                   key={idx}
                   href={item.to}
                   rel="noopener noreferrer"
+                  target="_blank"
                   className={item.className}
                 >
                   {item.children}
