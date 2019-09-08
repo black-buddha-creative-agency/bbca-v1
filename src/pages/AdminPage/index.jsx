@@ -1,34 +1,26 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { BrowserRouter as Route, Link } from 'react-router-dom'
+import Contact from '../../components/Contact'
+import Header from '../../components/Layout/Header'
 
 const Test = ({ match }) => {
-  return (
-    <div className="mt7 tc">
-      {console.log(match)}
-      <p>slug = {match.params.id}</p>
-    </div>
-  )
+  return <div className="tc">{match.params.id}</div>
 }
 
-const AdminPage = ({ match }) => {
-  return (
-    <>
-      <div className="mt5 tc">
+class AdminPage extends Component {
+  state = {}
+  render() {
+    return (
+      <div className="tc mt5">
         <h1 className="text-h2">Admin Panel</h1>
-        <ul>
-          <li>
-            <Link to={`${match.url}/test`}>Test</Link>
-          </li>
-        </ul>
+        <div className="mt3 pa3 flex flex-row justify-between">
+          <Link to={this.props.match.url}>Dashboard</Link>
+          <Link to={`${this.props.match.url}/events`}>Events</Link>
+          <Link to={`${this.props.match.url}/artists`}>Artists</Link>
+        </div>
       </div>
-      <Route path={`${match.path}/:id`} component={Test} />
-      <Route
-        exact
-        path={match.path}
-        render={() => <h3>Please select a topic.</h3>}
-      />
-    </>
-  )
+    )
+  }
 }
 
 export default AdminPage

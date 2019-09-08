@@ -9,6 +9,10 @@ import LoginPage from './pages/LoginPage'
 import AdminPage from './pages/AdminPage'
 import userService from './services/User'
 
+const Test = ({ match }) => {
+  return <div className="tc">{match.params.id}</div>
+}
+
 class App extends Component {
   state = {
     user: userService.getUser()
@@ -33,7 +37,6 @@ class App extends Component {
           )}
         />
         <Route
-          exact
           path="/events"
           render={props => (
             <EventsPage
@@ -43,7 +46,6 @@ class App extends Component {
           )}
         />
         <Route
-          exact
           path="/artists"
           render={props => (
             <ArtistsPage
@@ -53,7 +55,6 @@ class App extends Component {
           )}
         />
         <Route
-          exact
           path="/signup"
           render={({ history }) => (
             <SignUpPage
@@ -65,7 +66,6 @@ class App extends Component {
           )}
         />
         <Route
-          exact
           path="/login"
           render={({ history }) => (
             <LoginPage
@@ -76,7 +76,15 @@ class App extends Component {
             />
           )}
         />
-        <Route path="/buddha" render={props => <AdminPage {...props} />} />
+        <Route
+          path="/buddha"
+          render={props => (
+            <>
+              <Route path={`${props.match.url}/`} component={AdminPage} />
+              <Route path={`${props.match.url}/:id`} component={Test} />
+            </>
+          )}
+        />
       </Router>
     )
   }
