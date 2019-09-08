@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import data from '../../services'
+import data from '../../services/Data'
 import EventListItem from '../EventListItem'
 
 class EventList extends Component {

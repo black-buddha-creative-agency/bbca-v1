@@ -1,12 +1,11 @@
-import tokenService from './tokenService'
-
-const BASE_URL = 'http://localhost:3001'
+import tokenService from '../Token'
 
 // * Service Workers for Auth *//
+const BASE_URL = 'http://localhost:3001/users'
 
 function signup(user) {
   return (
-    fetch(BASE_URL + '/users/signup', {
+    fetch(BASE_URL + '/signup', {
       method: 'POST',
       headers: new Headers({ 'Content-Type': 'application/json' }),
       body: JSON.stringify(user)
@@ -23,7 +22,7 @@ function signup(user) {
 
 function login(creds) {
   return (
-    fetch(BASE_URL + '/users/login', {
+    fetch(BASE_URL + '/login', {
       method: 'POST',
       headers: new Headers({ 'Content-Type': 'application/json' }),
       body: JSON.stringify(creds)
@@ -47,36 +46,9 @@ function logout() {
   tokenService.removeToken()
 }
 
-// * Get Requests for Page body copy *//
-
-// returns a list of created Events by BBCA
-function getAllEvents() {
-  console.log(tokenService)
-  return fetch(`${BASE_URL}/events`).then(res => res.json())
-}
-
-// returns a list of Artists show by BBCA and collaborators
-function getAllArtists() {
-  return fetch(`${BASE_URL}/artists`).then(res => res.json())
-}
-
-// returns a list of all Curators from BBCA
-function getAllCurators() {
-  return fetch(`${BASE_URL}/curators`).then(res => res.json())
-}
-
-// returns a list of Sponsors in collaboration with BBCA
-function getAllSponsors() {
-  return fetch(`${BASE_URL}/sponsors`).then(res => res.json())
-}
-
 export default {
-  getAllEvents,
-  getAllArtists,
-  // getAllCurators,
-  // getAllSponsors,
   signup,
-  getUser,
+  login,
   logout,
-  login
+  getUser
 }

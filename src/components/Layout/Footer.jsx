@@ -38,7 +38,11 @@ const Footer = props => {
                       Admin Portal
                     </Link>
                   ) : null}
-                  <Link onClick={props.handleLogout} className="footer-link">
+                  <Link
+                    to=""
+                    onClick={props.handleLogout}
+                    className="footer-link"
+                  >
                     Log out
                   </Link>
                 </>

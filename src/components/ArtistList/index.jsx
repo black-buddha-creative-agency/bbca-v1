@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import data from '../../services/'
+import data from '../../services/Data'
 import ArtistListItem from '../ArtistListItem'
 
 class ArtistList extends Component {

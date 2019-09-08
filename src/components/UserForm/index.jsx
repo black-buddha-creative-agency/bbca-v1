@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Section from '../Layout/Section'
 
-import data from '../../services'
+import userService from '../../services/User'
 
 class UserForm extends Component {
   state = {
@@ -22,7 +22,7 @@ class UserForm extends Component {
   handleSubmit = async event => {
     event.preventDefault()
     try {
-      await data.signup(this.state)
+      await userService.signup(this.state)
       this.props.handleSignupOrLogin()
       this.props.history.push('/')
     } catch (error) {

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Header from '../../components/Layout/Header'
 import Section from '../../components/Layout/Section'
 import { Link } from 'react-router-dom'
-import data from '../../services/'
+import userService from '../../services/User'
 
 class LoginPage extends Component {
   state = {
@@ -27,11 +27,11 @@ class LoginPage extends Component {
   handleSubmit = async event => {
     event.preventDefault()
     try {
-      await data.login(this.state)
+      await userService.login(this.state)
       this.props.handleSignupOrLogin()
       this.props.history.push('/')
     } catch (error) {
-      // Invalid user data (probably duplicate email)
+      // Invalid user userService (probably duplicate email)
       this.updateMessage(error.message)
     }
   }
@@ -48,7 +48,8 @@ class LoginPage extends Component {
     const { username, password } = this.state
     const { page, altText, link } = this.formText
     return (
-      <>\
+      <>
+        \
         <Header />
         <Section>
           <div className="mt6 tc flex flex-column  check">

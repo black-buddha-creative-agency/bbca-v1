@@ -7,20 +7,20 @@ import ArtistsPage from './pages/ArtistsPage'
 import SignUpPage from './pages/SignUpPage'
 import LoginPage from './pages/LoginPage'
 import AdminPage from './pages/AdminPage'
-import data from './services/'
+import userService from './services/User'
 
 class App extends Component {
   state = {
-    user: data.getUser()
+    user: userService.getUser()
   }
 
   handleLogout = () => {
-    data.logout()
+    userService.logout()
     this.setState({ user: null })
   }
 
   handleSignupOrLogin = () => {
-    this.setState({ user: data.getUser() })
+    this.setState({ user: userService.getUser() })
   }
   render() {
     return (
@@ -76,16 +76,7 @@ class App extends Component {
             />
           )}
         />
-        <Route
-          exact
-          path="/buddha"
-          render={() => (
-            <AdminPage
-              user={this.state.user}
-              handleLogout={this.handleLogout}
-            />
-          )}
-        />
+        <Route path="/buddha" render={props => <AdminPage {...props} />} />
       </Router>
     )
   }
