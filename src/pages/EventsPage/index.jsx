@@ -3,9 +3,9 @@ import Section from '../../components/Layout/Section'
 import EventList from '../../components/EventList'
 import Layout from '../../components/Layout/'
 
-const EventPage = () => {
+const EventPage = props => {
   return (
-    <Layout>
+    <Layout handleLogout={props.handleLogout} user={props.user}>
       <Section>
         <div className="section-container">
           <article className="grid-layout grid-container--content">

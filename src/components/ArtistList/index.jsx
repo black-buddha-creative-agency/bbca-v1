@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getAllArtists } from '../../services/'
+import data from '../../services/Data'
 import ArtistListItem from '../ArtistListItem'
 
 class ArtistList extends Component {
@@ -10,7 +10,7 @@ class ArtistList extends Component {
     console.log(`${idx} is being hovered on boi`)
   }
   async handleGetArtists() {
-    const artists = await getAllArtists()
+    const artists = await data.getAllArtists()
     this.setState({ artists })
   }
   async componentDidMount() {

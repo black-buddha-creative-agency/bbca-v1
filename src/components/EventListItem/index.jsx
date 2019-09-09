@@ -18,15 +18,16 @@ const EventListItem = ({ event, handleClick, idx }) => {
           <div className="event-detail--content">
             <div className="event-detail--photo mr3"></div>
             <div className="event-detail--text ml3 ">
-              <div className="mb2 event-detail--header">
+              <div className="event-detail--header">
                 <h2 className="text-p1">
                   {date.year >= currentYear
                     ? 'What is the plan?'
                     : 'What was the plan?'}
                 </h2>
                 <div className=" date flex flex-column tr">
-                  <h2 className="text-p1">{date.year}</h2>
-                  <p>18:30 – 19:30</p>
+                  <h2 className="text-p1">
+                    {date.month.slice(0, 3)} {date.year}
+                  </h2>
                 </div>
               </div>
               <div className="mb5 pv3 ba bl-0 bb-0 br-0 b--solid b--black-30">

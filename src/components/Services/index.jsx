@@ -4,70 +4,70 @@ import hero from '../../SVG/hero.jpg'
 const Services = () => {
   return (
     <>
-      <section class="section services" id="Services">
-        <div class="services-container">
-          <h1 class="text-h2 white bold">Our Services</h1>
-          <div class="services-columns w-row">
-            <div class="service-column first w-col w-col-6">
-              <div class="services-item--container">
+      <section className="section services" id="Services">
+        <div className="services-container">
+          <h1 className="text-h2 white bold">Our Services</h1>
+          <div className="services-columns w-row">
+            <div className="service-column first w-col w-col-6">
+              <div className="services-item--container">
                 <div
-                  class="services-icon--container"
+                  className="services-icon--container"
                   style={{ background: 'transparent' }}
                 >
                   <i
-                    class="fas fa-microphone"
+                    className="fas fa-microphone"
                     style={{ color: 'white', background: 'transparent' }}
                   ></i>
                 </div>
-                <p class="text-p2 service-white">Event Hosting</p>
+                <p className="text-p2 service-white">Event Hosting</p>
               </div>
-              <div class="services-item--container">
+              <div className="services-item--container">
                 <div
-                  class="services-icon--container"
+                  className="services-icon--container"
                   style={{ background: 'transparent' }}
                 >
                   <i
-                    class="fas fa-tasks"
+                    className="fas fa-tasks"
                     style={{ color: 'white', background: 'transparent' }}
                   ></i>
                 </div>
-                <p class="text-p2 service-white">Event Management</p>
+                <p className="text-p2 service-white">Event Management</p>
               </div>
-              <div class="services-item--container">
+              <div className="services-item--container">
                 <div
-                  class="services-icon--container"
+                  className="services-icon--container"
                   style={{ background: 'transparent' }}
                 >
                   <i
-                    class="fas fa-ruler-combined"
+                    className="fas fa-ruler-combined"
                     style={{ color: 'white', background: 'transparent' }}
                   ></i>
                 </div>
-                <p class="text-p2 service-white">Framing</p>
+                <p className="text-p2 service-white">Framing</p>
               </div>
-              <div class="services-item--container">
+              <div className="services-item--container">
                 <div
-                  class="services-icon--container"
+                  className="services-icon--container"
                   style={{ background: 'transparent' }}
                 >
                   <i
-                    class="fas fa-print"
+                    className="fas fa-print"
                     style={{ color: 'white', background: 'transparent' }}
                   ></i>
                 </div>
-                <p class="text-p2 service-white">Vinyl Cutting</p>
+                <p className="text-p2 service-white">Vinyl Cutting</p>
               </div>
-              <div class="services-item--container bottom">
+              <div className="services-item--container bottom">
                 <div
-                  class="services-icon--container"
+                  className="services-icon--container"
                   style={{ background: 'transparent' }}
                 >
                   <i
-                    class="fas fa-hammer"
+                    className="fas fa-hammer"
                     style={{ color: 'white', background: 'transparent' }}
                   ></i>
                 </div>
-                <p class="text-p2 service-white">Installation</p>
+                <p className="text-p2 service-white">Installation</p>
               </div>
             </div>
           </div>

@@ -3,9 +3,9 @@ import Section from '../../components/Layout/Section'
 import ArtistList from '../../components/ArtistList'
 import Layout from '../../components/Layout/'
 
-const ArtistPage = () => {
+const ArtistPage = props => {
   return (
-    <Layout>
+    <Layout handleLogout={props.handleLogout} user={props.user}>
       <Section>
         <div className="section-container">
           <article className="grid-layout grid-container--content">
