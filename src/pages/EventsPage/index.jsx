@@ -35,6 +35,9 @@ const EventPage = props => {
                       eventMeta {
                         isopen
                         eventDate
+                        eventImages {
+                          sourceUrl
+                        }
                       }
                     }
                   }

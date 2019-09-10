@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const EventListItem = ({ event, handleClick, idx }) => {
-  const { title, slug } = event
-  const { isopen, eventDate } = event.eventMeta
+  const { title, date, sponsors, artists, curators, slug } = event
+  const { isopen, eventDate, eventImages } = event.eventMeta
   return (
     <>
       <li
@@ -17,10 +17,18 @@ const EventListItem = ({ event, handleClick, idx }) => {
       {isopen ? (
         <div className="event-detail--container pv3 ba bl-0 bb-0 br-0 b--solid b--black-30">
           <div className="event-detail--content">
-            <div className="event-detail--photo mr3"></div>
+            {eventImages ? (
+              <img
+                className="event-detail--photo"
+                src={eventImages[1].sourceUrl}
+                alt=""
+              />
+            ) : (
+              <div className="event-detail--photo">No Image Available</div>
+            )}
             <div className="event-detail--text ml3 ">
               <div className="flex flex-row">
-                <div className=" date flex flex-column tr">
+                <div className="date flex flex-column">
                   <h2 className="text-p1">{eventDate}</h2>
                 </div>
               </div>

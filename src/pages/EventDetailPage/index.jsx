@@ -29,21 +29,30 @@ class EventDetailPage extends Component {
                     <h1 className="text-h2 mb5 text-accent--2">
                       {props.data.event.title}
                     </h1>
-                    {props.data.event.eventMeta.exhibitionType.length > 1 ? (
-                      props.data.event.eventMeta.exhibitionType.map(
-                        (type, idx) => (
-                          <h3 className="mt3 mb2" key={idx}>
-                            {type}
+                    <h2 className="text-accent">
+                      {props.data.event.eventMeta.eventDate}
+                    </h2>
+                    <div className="ba bw2 br-0 bb-0 bl-0 b--black b--solid pt3 mb4 grid-block--title flex flex-column">
+                      <div className="mt3 mb4 flex flex-row ">
+                        {props.data.event.eventMeta.exhibitionType.length >
+                        1 ? (
+                          props.data.event.eventMeta.exhibitionType.map(
+                            (type, idx) => (
+                              <p
+                                className="mr2"
+                                style={{ textDecoration: 'underline' }}
+                                key={idx}
+                              >
+                                {type}
+                              </p>
+                            )
+                          )
+                        ) : (
+                          <h3 className="mt3 mb2 ">
+                            {props.data.event.eventMeta.exhibitionType}
                           </h3>
-                        )
-                      )
-                    ) : (
-                      <h3 className="mt3 mb2">
-                        {props.data.event.eventMeta.exhibitionType}
-                      </h3>
-                    )}
-                    <hr />
-                    <div className="mb4 grid-block--title flex flex-column">
+                        )}
+                      </div>
                       <h4 className="mb1">Artists</h4>
 
                       <div className="flex flex-column">
@@ -91,7 +100,7 @@ class EventDetailPage extends Component {
               <div className="">
                 {props.data.event.eventMeta.eventImages
                   ? props.data.event.eventMeta.eventImages.map((image, idx) => (
-                      <div key={idx} className="fl w-100 w-50-ns pa2">
+                      <div key={idx} className="fl w-100 w-50-ns pr2 pb2">
                         <img
                           alt=""
                           className=" photo-gallery"
@@ -102,6 +111,15 @@ class EventDetailPage extends Component {
                     ))
                   : null}
               </div>
+
+              {props.data.event.title === 'Collect It For The Culture II' ? (
+                <div className="w-100 mt2">
+                  <iframe
+                    src="https://my.matterport.com/show/?m=rynrg7qeaEo&utm_source=4"
+                    frameBorder="0"
+                  />
+                </div>
+              ) : null}
 
               <div className="mv5 grid-layout grid-container--content">
                 <div className=" grid-block--title flex flex-column">

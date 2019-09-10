@@ -689,10 +689,15 @@ img {
 }
 .event-detail--photo {
   background: no-repeat;
-  background-image: url('./SVG/hero.jpg');
+  /* background-image: url('./SVG/hero.jpg'); */
   background-size: cover;
   background-color: #999;
   min-height: 25rem;
+}
+
+div > iframe {
+  min-height: 90vh;
+  min-width: 100%;
 }
 /*------------------------------------*\
     # Artist Page Styles
