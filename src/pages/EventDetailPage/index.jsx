@@ -1,114 +1,175 @@
-import React from 'react'
+import React, { Component } from 'react'
+import gql from 'graphql-tag'
+import { graphql } from 'react-apollo'
+
+import Loader from 'react-loader-spinner'
 import Section from '../../components/Layout/Section'
 import left from '../../SVG/hero.jpg'
-const EventDetailPage = props => {
-  return (
-    <Section>
-      <div className="section-container">
-        <article className="grid-layout grid-container--content">
-          <div className=" grid-block--title flex flex-column">
-            <div>
-              <h1 className="text-h2 mb5">Event Title</h1>
-              <h3 className="mt3 mb4 ">Event Type</h3>
-              <hr />
-              <div className="mb4 grid-block--title flex flex-column">
-                <h4 className="mb1">Artists</h4>
 
-                <div className="flex flex-column">
-                  <p className="artists mv2">
-                    Hello Goodbor <br />
-                    Good Saves <br />
-                    Hello Jas <br />
-                    Good Techo <br />
-                    Hello Bring <br />
-                    Goods Seiv <br />
-                    Hello Pelsa <br />
-                    Good Wirls <br />
+class EventDetailPage extends Component {
+  state = {}
+  render() {
+    const props = this.props
+
+    const { loading } = this.props.data
+
+    console.log(props, loading)
+    return (
+      <Section>
+        <div className="section-container">
+          {loading ? (
+            <div className="pa5 mt5 tc w-100 h-100 flex flex-row justify-center items-center">
+              <Loader type="Oval" color="#ada4a4" height={80} width={80} />
+            </div>
+          ) : (
+            <>
+              <article className="mb4 grid-layout grid-container--content">
+                <div className="grid-block--title flex flex-column">
+                  <div>
+                    <h1 className="text-h2 mb5 text-accent--2">
+                      {props.data.event.title}
+                    </h1>
+                    {props.data.event.eventMeta.exhibitionType.length > 1 ? (
+                      props.data.event.eventMeta.exhibitionType.map(
+                        (type, idx) => (
+                          <h3 className="mt3 mb2" key={idx}>
+                            {type}
+                          </h3>
+                        )
+                      )
+                    ) : (
+                      <h3 className="mt3 mb2">
+                        {props.data.event.eventMeta.exhibitionType}
+                      </h3>
+                    )}
+                    <hr />
+                    <div className="mb4 grid-block--title flex flex-column">
+                      <h4 className="mb1">Artists</h4>
+
+                      <div className="flex flex-column">
+                        <p className="artists mv2">
+                          {props.data.event.eventMeta.artists.map(
+                            (artist, idx) => (
+                              <span key={idx}>
+                                {artist} <br />
+                              </span>
+                            )
+                          )}
+                        </p>
+                      </div>
+                    </div>
+                    <div className=" grid-block--title flex flex-column">
+                      <h4 className="mb1">
+                        {props.data.event.eventMeta.curators.length > 2
+                          ? 'Curators'
+                          : 'Curator'}
+                      </h4>
+
+                      <div className="flex flex-column">
+                        <p className="artists mv2">
+                          {props.data.event.eventMeta.curators.map(
+                            (curator, idx) => (
+                              <span key={idx}>
+                                {curator} <br />
+                              </span>
+                            )
+                          )}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="event grid-block--content">
+                  <p className="text-p2">
+                    {props.data.event.content.replace(/(<([^>]+)>)/gi, '')}
                   </p>
                 </div>
+              </article>
+              <div className="w-100 mt4">
+                <img
+                  alt=""
+                  className=" photo-gallery"
+                  sizes="(max-width: 479px) 87vw, (max-width: 767px) 42vw, (max-width: 991px) 47vw, 50vw"
+                  src={left}
+                />
               </div>
-              <div className=" grid-block--title flex flex-column">
-                <h4 className="mb1">Curators</h4>
-
-                <div className="flex flex-column">
-                  <p className="artists mv2">
-                    Hello Goodbor <br />
-                    Good Saves <br />
-                    Hello Jas <br />
+              <div className="w-100 mt4">
+                <img
+                  alt=""
+                  className=" photo-gallery"
+                  sizes="(max-width: 479px) 87vw, (max-width: 767px) 42vw, (max-width: 991px) 47vw, 50vw"
+                  src={left}
+                />
+              </div>
+              <div className="w-100 mt4">
+                <img
+                  alt=""
+                  className=" photo-gallery"
+                  sizes="(max-width: 479px) 87vw, (max-width: 767px) 42vw, (max-width: 991px) 47vw, 50vw"
+                  src={left}
+                />
+              </div>
+              <div className="w-100 mt4">
+                <img
+                  alt=""
+                  className=" photo-gallery"
+                  sizes="(max-width: 479px) 87vw, (max-width: 767px) 42vw, (max-width: 991px) 47vw, 50vw"
+                  src={left}
+                />
+              </div>
+              <div className="mv5 grid-layout grid-container--content">
+                <div className=" grid-block--title flex flex-column">
+                  <h1 className="text-h2 mb5">Partner + Sponsors</h1>
+                </div>
+                <div className="event grid-block--content">
+                  <p className="text-p2">
+                    Thank you to all our partners and sponsors for helping make{' '}
+                    {props.data.event.title} possible!
                   </p>
+                  <div className="mt5 w-100 flex flex-column">
+                    <h3 className="artists text-p1">
+                      {props.data.event.eventMeta.sponsors.map(
+                        (sponsor, idx) => (
+                          <span key={idx}>
+                            {sponsor} <br />
+                          </span>
+                        )
+                      )}
+                    </h3>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div className="event grid-block--content">
-            <p className="text-p2">
-              We have worked with local artists, curators, and creatives to
-              activate spaces. These collaborations have been in the form of
-              talks, exhibitions, and others. See our events past and present
-              below.
-              {props.match.params.slug}
-            </p>
-          </div>
-        </article>
-        <div className="w-100 mt4">
-          <img
-            alt=""
-            className=" photo-gallery"
-            sizes="(max-width: 479px) 87vw, (max-width: 767px) 42vw, (max-width: 991px) 47vw, 50vw"
-            src={left}
-          />
+            </>
+          )}
         </div>
-        <div className="w-100 mt4">
-          <img
-            alt=""
-            className=" photo-gallery"
-            sizes="(max-width: 479px) 87vw, (max-width: 767px) 42vw, (max-width: 991px) 47vw, 50vw"
-            src={left}
-          />
-        </div>
-        <div className="w-100 mt4">
-          <img
-            alt=""
-            className=" photo-gallery"
-            sizes="(max-width: 479px) 87vw, (max-width: 767px) 42vw, (max-width: 991px) 47vw, 50vw"
-            src={left}
-          />
-        </div>
-        <div className="w-100 mt4">
-          <img
-            alt=""
-            className=" photo-gallery"
-            sizes="(max-width: 479px) 87vw, (max-width: 767px) 42vw, (max-width: 991px) 47vw, 50vw"
-            src={left}
-          />
-        </div>
-        <div className="mv5 grid-layout grid-container--content">
-          <div className=" grid-block--title flex flex-column">
-            <h1 className="text-h2 mb5">Partner + Sponsors</h1>
-          </div>
-          <div className="event grid-block--content">
-            <p className="text-p2">
-              Thank you to all our partners and sponsors for helping make [event
-              title] possible!
-            </p>
-            <div className="mt5 w-100 flex flex-column">
-              <h3 className="artists text-h1">
-                Hello Goodbor <br />
-                Good Saves <br />
-                Hello Jas <br />
-                Good Techo <br />
-                Hello Bring <br />
-                Goods Seiv <br />
-                Hello Pelsa <br />
-                Good Wirls <br />
-              </h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Section>
-  )
+      </Section>
+    )
+  }
 }
-
-export default EventDetailPage
+const getEventBySlug = gql`
+  query getEventBySlug($slug: String) {
+    event: eventBy(uri: $slug) {
+      title
+      content
+      eventMeta {
+        exhibitionType
+        artists
+        curators
+        sponsors
+        eventDate
+        activations
+      }
+    }
+  }
+`
+export default graphql(getEventBySlug, {
+  options: props => {
+    const slug = props.match.params.slug
+    return {
+      variables: {
+        slug
+      }
+    }
+  }
+})(EventDetailPage)

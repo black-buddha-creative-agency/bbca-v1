@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
-import data from '../../services/Data'
+
 import EventListItem from '../EventListItem'
+import Loader from 'react-loader-spinner'
 
 class EventList extends Component {
   state = {
-    events: []
+    events: this.props.events
   }
-
   handleClick = idx => {
     let events = this.state.events
     let index = idx
+    console.log(events)
     events.forEach((event, idx) => {
       if (idx === index) {
-        events[idx].isOpen = !events[idx].isOpen
+        events[idx].node.eventMeta.isopen = !events[idx].node.eventMeta.isopen
       } else {
-        event.isOpen = false
+        event.node.eventMeta.isopen = false
       }
     })
 
@@ -22,21 +23,13 @@ class EventList extends Component {
       events: events
     })
   }
-  async handleGetEvents() {
-    const events = await data.getAllEvents()
-    this.setState({ events })
-  }
-  async componentDidMount() {
-    this.handleGetEvents()
-  }
-
   render() {
     return this.state.events.length ? (
       <div className="event-list list">
         {this.state.events.map((event, idx) => (
           <EventListItem
-            event={event}
-            key={event._id}
+            event={event.node}
+            key={event.node.slug}
             idx={idx}
             handleClick={this.handleClick}
           />
@@ -44,7 +37,7 @@ class EventList extends Component {
       </div>
     ) : (
       <div className="pa5 mt5 tc w-100 h-100 flex flex-row justify-center items-center">
-        <h2 className="text-h2">No events to show...check back soon!</h2>
+        <Loader type="Oval" color="#ada4a4" height={80} width={80} />
       </div>
     )
   }

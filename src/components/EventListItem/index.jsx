@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const EventListItem = ({ event, handleClick, idx }) => {
-  const { title, date, sponsors, artists, curators, isOpen } = event
-  let currentYear = new Date().getFullYear()
+  const { title, date, sponsors, artists, curators, slug } = event
+  const { isopen } = event.eventMeta
   return (
     <>
       <li
@@ -11,79 +12,49 @@ const EventListItem = ({ event, handleClick, idx }) => {
       >
         <p className="text-p1 title">{title}</p>
 
-        <p className="text-h2">{isOpen ? '–' : '+'} </p>
+        <p className="text-h2">{isopen ? '–' : '+'} </p>
       </li>
-      {isOpen ? (
+      {isopen ? (
         <div className="event-detail--container pv3 ba bl-0 bb-0 br-0 b--solid b--black-30">
           <div className="event-detail--content">
             <div className="event-detail--photo mr3"></div>
             <div className="event-detail--text ml3 ">
               <div className="event-detail--header">
-                <h2 className="text-p1">
-                  {date.year >= currentYear
-                    ? 'What is the plan?'
-                    : 'What was the plan?'}
-                </h2>
-                <div className=" date flex flex-column tr">
-                  <h2 className="text-p1">
-                    {date.month.slice(0, 3)} {date.year}
-                  </h2>
+                <div className="flex flex-column">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Voluptate vel rerum, impedit inventore dignissimos unde sit
+                    sequi? Eius ea, molestiae, earum officiis voluptate unde,
+                    debitis a ipsa eaque recusandae nesciunt quia deserunt? Quas
+                    saepe culpa, ad, suscipit accusamus quod, animi explicabo
+                    laboriosam natus distinctio temporibus eum autem reiciendis
+                    impedit officiis. Impedit culpa harum nulla numquam natus
+                    dolorem obcaecati accusantium sit accusamus autem illum
+                    sint, nesciunt id tempora. Neque delectus error nesciunt
+                    necessitatibus quae eaque fuga eum commodi, perspiciatis
+                    itaque a sunt culpa explicabo aspernatur veniam magnam
+                    ratione laudantium soluta recusandae, aliquam dicta?
+                    Consectetur quo ullam ut corporis nobis veritatis sed.
+                  </p>
                 </div>
               </div>
-              <div className="mb5 pv3 ba bl-0 bb-0 br-0 b--solid b--black-30">
-                <div className=" mv3 flex flex-column">
-                  <p className="text-p2">Sponsors</p>
-                  <div className="mv3 flex flex-row">
-                    {sponsors.map(sponsor => (
-                      <a
-                        className="mr3 pv2"
-                        href={sponsor.link}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        {sponsor.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-                <div className="mv3 flex flex-column">
-                  <p className="text-p2">Artists</p>
-                  <div className="mv3 flex flex-column">
-                    <p className="artists mv2">
-                      {artists.map(artist => (
-                        <>
-                          {artist}
-                          <br />
-                        </>
-                      ))}
-                    </p>
-                  </div>
-                </div>
-                <div className=" mv3 flex flex-column">
-                  <p className="text-p2">Curatorial</p>
-                  <div className="mv3 flex flex-row">
-                    {curators.map(curator => (
-                      <p className="mr3 pv2">{curator}</p>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-row justify-between">
-                <div>
+
+              <div className="flex flex-row justify-between items-center">
+                <div className="flex flex-row mb1">
                   <a className="mr2" href="/">
-                    Link
+                    <p className="text-p2">Link</p>
                   </a>
                   <a className="mr2" href="/">
-                    Link
+                    <p className="text-p2">Link</p>
                   </a>
                   <a className="mr2" href="/">
-                    Link
+                    <p className="text-p2">Link</p>
                   </a>
                 </div>
                 <div>
-                  <a href="/">
-                    <h2 className="text-p2"> Read More ></h2>
-                  </a>
+                  <Link to={`/event/${slug}`}>
+                    <h3 className="text-p2"> Read More ></h3>
+                  </Link>
                 </div>
               </div>
             </div>
