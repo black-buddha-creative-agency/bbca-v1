@@ -19,25 +19,27 @@ const EventListItem = ({ event, handleClick, idx }) => {
           <div className="event-detail--content">
             <div className="event-detail--photo mr3"></div>
             <div className="event-detail--text ml3 ">
-              <div className="event-detail--header">
-                hi
-                <div className="flex flex-column">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptate vel rerum, impedit inventore dignissimos unde sit
-                    sequi? Eius ea, molestiae, earum officiis voluptate unde,
-                    debitis a ipsa eaque recusandae nesciunt quia deserunt? Quas
-                    saepe culpa, ad, suscipit accusamus quod, animi explicabo
-                    laboriosam natus distinctio temporibus eum autem reiciendis
-                    impedit officiis. Impedit culpa harum nulla numquam natus
-                    dolorem obcaecati accusantium sit accusamus autem illum
-                    sint, nesciunt id tempora. Neque delectus error nesciunt
-                    necessitatibus quae eaque fuga eum commodi, perspiciatis
-                    itaque a sunt culpa explicabo aspernatur veniam magnam
-                    ratione laudantium soluta recusandae, aliquam dicta?
-                    Consectetur quo ullam ut corporis nobis veritatis sed.
-                  </p>
+              <div className="flex justify-end">
+                <div className=" date flex flex-column tr">
+                  <h2 className="text-p1">Hello</h2>
                 </div>
+              </div>
+              <div className="flex flex-column">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptate vel rerum, impedit inventore dignissimos unde sit
+                  sequi? Eius ea, molestiae, earum officiis voluptate unde,
+                  debitis a ipsa eaque recusandae nesciunt quia deserunt? Quas
+                  saepe culpa, ad, suscipit accusamus quod, animi explicabo
+                  laboriosam natus distinctio temporibus eum autem reiciendis
+                  impedit officiis. Impedit culpa harum nulla numquam natus
+                  dolorem obcaecati accusantium sit accusamus autem illum sint,
+                  nesciunt id tempora. Neque delectus error nesciunt
+                  necessitatibus quae eaque fuga eum commodi, perspiciatis
+                  itaque a sunt culpa explicabo aspernatur veniam magnam ratione
+                  laudantium soluta recusandae, aliquam dicta? Consectetur quo
+                  ullam ut corporis nobis veritatis sed.
+                </p>
               </div>
 
               <div className="flex flex-row justify-between items-center">
