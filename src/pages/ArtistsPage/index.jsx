@@ -1,4 +1,7 @@
 import React from 'react'
+import {Query} from 'react-apollo'
+
+
 import Section from '../../components/Layout/Section'
 import ArtistList from '../../components/ArtistList'
 
@@ -12,6 +15,7 @@ const ArtistPage = props => {
             <h1 className="text-h2">Artists</h1>
           </div>
           <div className="grid-block--content">
+
             <ArtistList />
           </div>
         </article>

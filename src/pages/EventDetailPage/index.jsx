@@ -82,42 +82,27 @@ class EventDetailPage extends Component {
 
                 <div className="event grid-block--content">
                   <p className="text-p2">
-                    {props.data.event.content.replace(/(<([^>]+)>)/gi, '')}
+                    {props.data.event.content
+                      ? props.data.event.content.replace(/(<([^>]+)>)/gi, '')
+                      : null}
                   </p>
                 </div>
               </article>
-              <div className="w-100 mt4">
-                <img
-                  alt=""
-                  className=" photo-gallery"
-                  sizes="(max-width: 479px) 87vw, (max-width: 767px) 42vw, (max-width: 991px) 47vw, 50vw"
-                  src={left}
-                />
+              <div className="">
+                {props.data.event.eventMeta.eventImages
+                  ? props.data.event.eventMeta.eventImages.map((image, idx) => (
+                      <div key={idx} className="fl w-100 w-50-ns pa2">
+                        <img
+                          alt=""
+                          className=" photo-gallery"
+                          sizes="(max-width: 479px) 87vw, (max-width: 767px) 42vw, (max-width: 991px) 47vw, 50vw"
+                          src={image.sourceUrl}
+                        />
+                      </div>
+                    ))
+                  : null}
               </div>
-              <div className="w-100 mt4">
-                <img
-                  alt=""
-                  className=" photo-gallery"
-                  sizes="(max-width: 479px) 87vw, (max-width: 767px) 42vw, (max-width: 991px) 47vw, 50vw"
-                  src={left}
-                />
-              </div>
-              <div className="w-100 mt4">
-                <img
-                  alt=""
-                  className=" photo-gallery"
-                  sizes="(max-width: 479px) 87vw, (max-width: 767px) 42vw, (max-width: 991px) 47vw, 50vw"
-                  src={left}
-                />
-              </div>
-              <div className="w-100 mt4">
-                <img
-                  alt=""
-                  className=" photo-gallery"
-                  sizes="(max-width: 479px) 87vw, (max-width: 767px) 42vw, (max-width: 991px) 47vw, 50vw"
-                  src={left}
-                />
-              </div>
+
               <div className="mv5 grid-layout grid-container--content">
                 <div className=" grid-block--title flex flex-column">
                   <h1 className="text-h2 mb5">Partner + Sponsors</h1>
@@ -159,6 +144,9 @@ const getEventBySlug = gql`
         sponsors
         eventDate
         activations
+        eventImages {
+          sourceUrl
+        }
       }
     }
   }

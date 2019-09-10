@@ -1,7 +1,6 @@
 import React from 'react'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
-import { Link } from 'react-router-dom'
 
 import Section from '../../components/Layout/Section'
 import EventList from '../../components/EventList'
@@ -55,7 +54,7 @@ const EventPage = props => {
                   </div>
                 )
               }
-              console.log(data)
+
               return <EventList events={data.events.edges} />
             }}
           </Query>

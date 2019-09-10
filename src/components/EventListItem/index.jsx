@@ -20,6 +20,7 @@ const EventListItem = ({ event, handleClick, idx }) => {
             <div className="event-detail--photo mr3"></div>
             <div className="event-detail--text ml3 ">
               <div className="event-detail--header">
+                hi
                 <div className="flex flex-column">
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
