@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const EventListItem = ({ event, handleClick, idx }) => {
-  const { title, date, sponsors, artists, curators, slug } = event
-  const { isopen } = event.eventMeta
+  const { title, slug } = event
+  const { isopen, eventDate } = event.eventMeta
   return (
     <>
       <li
@@ -19,9 +19,9 @@ const EventListItem = ({ event, handleClick, idx }) => {
           <div className="event-detail--content">
             <div className="event-detail--photo mr3"></div>
             <div className="event-detail--text ml3 ">
-              <div className="flex justify-end">
+              <div className="flex flex-row">
                 <div className=" date flex flex-column tr">
-                  <h2 className="text-p1">Hello</h2>
+                  <h2 className="text-p1">{eventDate}</h2>
                 </div>
               </div>
               <div className="flex flex-column">

@@ -34,6 +34,7 @@ const EventPage = props => {
                       slug
                       eventMeta {
                         isopen
+                        eventDate
                       }
                     }
                   }
