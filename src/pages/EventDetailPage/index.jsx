@@ -4,7 +4,6 @@ import { graphql } from 'react-apollo'
 
 import Loader from 'react-loader-spinner'
 import Section from '../../components/Layout/Section'
-import left from '../../SVG/hero.jpg'
 
 class EventDetailPage extends Component {
   state = {}

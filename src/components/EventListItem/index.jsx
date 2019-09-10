@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const EventListItem = ({ event, handleClick, idx }) => {
   const { title, date, sponsors, artists, curators, slug } = event
-  const { isopen, eventDate, eventImages } = event.eventMeta
+  const { isopen, eventDate, eventImages, socialLinks } = event.eventMeta
   return (
     <>
       <li
@@ -20,19 +20,17 @@ const EventListItem = ({ event, handleClick, idx }) => {
             {eventImages ? (
               <img
                 className="event-detail--photo"
-                src={eventImages[1].sourceUrl}
+                src={eventImages[0].sourceUrl}
                 alt=""
               />
             ) : (
               <div className="event-detail--photo">No Image Available</div>
             )}
             <div className="event-detail--text ml3 ">
-              <div className="flex flex-row">
-                <div className="date flex flex-column">
+              <div className="flex flex-column">
+                <div className="mb4">
                   <h2 className="text-p1">{eventDate}</h2>
                 </div>
-              </div>
-              <div className="flex flex-column">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Voluptate vel rerum, impedit inventore dignissimos unde sit
@@ -51,16 +49,20 @@ const EventListItem = ({ event, handleClick, idx }) => {
               </div>
 
               <div className="flex flex-row justify-between items-center">
-                <div className="flex flex-row mb1">
-                  <a className="mr2" href="/">
-                    <p className="text-p2">Link</p>
-                  </a>
-                  <a className="mr2" href="/">
-                    <p className="text-p2">Link</p>
-                  </a>
-                  <a className="mr2" href="/">
-                    <p className="text-p2">Link</p>
-                  </a>
+                <div className="flex flex-row mb2">
+                  {socialLinks
+                    ? socialLinks.map((link, idx) => (
+                        <a
+                          key={idx}
+                          className="mr3 text-p2"
+                          href={link.linkUrl}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          {link.linkText}
+                        </a>
+                      ))
+                    : null}
                 </div>
                 <div>
                   <Link to={`/event/${slug}`}>

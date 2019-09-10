@@ -38,6 +38,10 @@ const EventPage = props => {
                         eventImages {
                           sourceUrl
                         }
+                        socialLinks {
+                          linkText
+                          linkUrl
+                        }
                       }
                     }
                   }

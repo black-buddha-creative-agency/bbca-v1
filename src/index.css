@@ -696,7 +696,7 @@ img {
 }
 
 div > iframe {
-  min-height: 90vh;
+  min-height: 85vh;
   min-width: 100%;
 }
 /*------------------------------------*\
