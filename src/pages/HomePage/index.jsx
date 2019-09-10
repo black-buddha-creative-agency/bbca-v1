@@ -5,7 +5,7 @@ import Services from '../../components/Services'
 
 const HomePage = props => {
   return (
-    <>
+    <main className="fadeIn">
       <Hero
         text={
           'An agency fostering engagement, education and investment in creative arts'
@@ -14,7 +14,7 @@ const HomePage = props => {
       />
       <About />
       <Services />
-    </>
+    </main>
   )
 }
 

@@ -118,6 +118,7 @@ class EventDetailPage extends Component {
                   <iframe
                     src="https://my.matterport.com/show/?m=rynrg7qeaEo&utm_source=4"
                     frameBorder="0"
+                    title="Collect It For The Culture II Digital Gallery"
                   />
                 </div>
               ) : null}

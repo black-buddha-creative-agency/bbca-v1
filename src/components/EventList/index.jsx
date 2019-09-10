@@ -25,7 +25,7 @@ class EventList extends Component {
   }
   render() {
     return this.state.events.length ? (
-      <div className="event-list list">
+      <div className="event-list list fadeIn">
         {this.state.events.map((event, idx) => (
           <EventListItem
             event={event.node}

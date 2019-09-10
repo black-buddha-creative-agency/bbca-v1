@@ -24,12 +24,19 @@ const EventListItem = ({ event, handleClick, idx }) => {
                 alt=""
               />
             ) : (
-              <div className="event-detail--photo">No Image Available</div>
+              <div className="event-detail--photo-placeholder flex flex-column justify-center items-center">
+                Uh oh...Refresh the page?
+              </div>
             )}
             <div className="event-detail--text ml3 ">
-              <div className="flex flex-column">
-                <div className="mb4">
-                  <h2 className="text-p1">{eventDate}</h2>
+              <div className="flex flex-column ">
+                <div className="mb4 mt2 ">
+                  <p
+                    style={{ fontSize: '1rem' }}
+                    className="pb3 ba br-0 bl-0 bt-0 b--black b--solid"
+                  >
+                    <strong>{eventDate.toUpperCase()}</strong>
+                  </p>
                 </div>
                 <p>{content ? content.replace(/(<([^>]+)>)/gi, '') : null}</p>
               </div>

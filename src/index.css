@@ -378,6 +378,7 @@ nav {
   justify-content: center;
   align-items: center;
   background-color: #fafafa;
+  /* box-shadow: 0px 0.01rem 0.09rem #999; */
 }
 
 .imagebreak,
@@ -410,7 +411,7 @@ nav {
   text-align: left;
 }
 .text-p1.title {
-  width: 50%;
+  width: 90%;
 }
 .text-p1.year {
   margin-left: -39.5rem;
@@ -496,6 +497,9 @@ nav {
   grid-row-gap: 16px;
   grid-column-gap: 16px;
 }
+.fadeIn {
+  animation: fadeIn 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
 
 .section {
   display: flex;
@@ -503,6 +507,7 @@ nav {
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
+  animation: fadeIn 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .section-container {
@@ -542,7 +547,9 @@ nav {
   grid-column-end: 3;
   grid-row-end: 2;
 }
-
+.artist-block.grid-block--content {
+  max-width: 991px;
+}
 .text-p2.service-white {
   background-color: #a39ea3;
   color: #fff;
@@ -696,17 +703,29 @@ img {
   /* background-image: url('./SVG/hero.jpg'); */
   background-size: cover;
   background-color: #999;
-  min-height: 25rem;
+  max-height: 30rem;
+}
+.event-detail--photo-placeholder {
+  background: no-repeat;
+  width: 50%;
+  /* background-image: url('./SVG/hero.jpg'); */
+  background-size: cover;
+  background-color: #999;
+  min-height: 30rem;
 }
 
 div > iframe {
-  min-height: 85vh;
+  min-height: 86vh;
   min-width: 100%;
 }
 /*------------------------------------*\
     # Artist Page Styles
 \*------------------------------------*/
 
+.artist-list--item {
+  width: 100%;
+  font-size: 2rem;
+}
 .artist-list--item:hover {
   transition: all 0.2s ease;
   color: #7c6f6f;
@@ -945,6 +964,9 @@ img {
 .artists {
   columns: 2 auto;
 }
+.artists-3 {
+  columns: 3 auto;
+}
 
 .event.grid-block--content {
   max-width: 100%;
@@ -980,6 +1002,10 @@ div.donut {
   }
 }
 @media (max-width: 991px) {
+  .artist-list--item {
+    width: 100%;
+    font-size: 1.5rem;
+  }
   .event-detail--content {
     flex-direction: column;
   }
@@ -1224,11 +1250,19 @@ div.donut {
   }
 }
 @media (max-width: 579px) {
+  .artists-3 {
+    columns: 2 auto;
+  }
+  .artist-list--item {
+    width: 100%;
+    font-size: 1rem;
+  }
   .event-detail--photo {
     min-height: 20rem;
     background-size: cover;
   }
 }
+
 @media (max-width: 479px) {
   .event-detail--header,
   .event-detail--content {
