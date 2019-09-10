@@ -152,11 +152,7 @@ body {
 }
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2 {
   font-family: 'Proza Libre', sans-serif;
   margin-top: 36px;
   color: #3c393c;
@@ -938,6 +934,10 @@ img {
 }
 .artists {
   columns: 2 auto;
+}
+
+.event.grid-block--content {
+  max-width: 100%;
 }
 /*------------------------------------*\
     # Responsive Styles
