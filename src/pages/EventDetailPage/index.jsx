@@ -52,37 +52,39 @@ class EventDetailPage extends Component {
                           </h3>
                         )}
                       </div>
-                      <h4 className="mb1">Artists</h4>
+
+                      <p className="mb2 text-accent">Artists</p>
 
                       <div className="flex flex-column">
-                        <p className="artists mv2">
+                        <div className="artists mv2">
                           {props.data.event.eventMeta.artists.map(
                             (artist, idx) => (
-                              <span key={idx}>
+                              <h5 className="pv2" key={idx}>
                                 {artist} <br />
-                              </span>
+                              </h5>
                             )
                           )}
-                        </p>
+                        </div>
                       </div>
                     </div>
+
                     <div className=" grid-block--title flex flex-column">
-                      <h4 className="mb1">
+                      <p className="mb2 text-accent">
                         {props.data.event.eventMeta.curators.length > 2
                           ? 'Curators'
                           : 'Curator'}
-                      </h4>
+                      </p>
 
                       <div className="flex flex-column">
-                        <p className="artists mv2">
+                        <div className="artists mv2">
                           {props.data.event.eventMeta.curators.map(
                             (curator, idx) => (
-                              <span key={idx}>
+                              <h5 className="pv2" key={idx}>
                                 {curator} <br />
-                              </span>
+                              </h5>
                             )
                           )}
-                        </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -96,10 +98,10 @@ class EventDetailPage extends Component {
                   </p>
                 </div>
               </article>
-              <div className="">
+              <div className="flex flex-wrap justify-center items-center">
                 {props.data.event.eventMeta.eventImages
                   ? props.data.event.eventMeta.eventImages.map((image, idx) => (
-                      <div key={idx} className="fl w-100 w-50-ns pr2 pb2">
+                      <div key={idx} className="pa2 w-100-m w-50-ns">
                         <img
                           alt=""
                           className=" photo-gallery"
@@ -133,9 +135,9 @@ class EventDetailPage extends Component {
                     <h3 className="artists text-p1">
                       {props.data.event.eventMeta.sponsors.map(
                         (sponsor, idx) => (
-                          <span key={idx}>
+                          <h5 className="pv2" key={idx}>
                             {sponsor} <br />
-                          </span>
+                          </h5>
                         )
                       )}
                     </h3>

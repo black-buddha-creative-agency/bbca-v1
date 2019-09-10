@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const EventListItem = ({ event, handleClick, idx }) => {
-  const { title, date, sponsors, artists, curators, slug } = event
+  const { title, content, slug } = event
   const { isopen, eventDate, eventImages, socialLinks } = event.eventMeta
   return (
     <>
@@ -31,21 +31,7 @@ const EventListItem = ({ event, handleClick, idx }) => {
                 <div className="mb4">
                   <h2 className="text-p1">{eventDate}</h2>
                 </div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptate vel rerum, impedit inventore dignissimos unde sit
-                  sequi? Eius ea, molestiae, earum officiis voluptate unde,
-                  debitis a ipsa eaque recusandae nesciunt quia deserunt? Quas
-                  saepe culpa, ad, suscipit accusamus quod, animi explicabo
-                  laboriosam natus distinctio temporibus eum autem reiciendis
-                  impedit officiis. Impedit culpa harum nulla numquam natus
-                  dolorem obcaecati accusantium sit accusamus autem illum sint,
-                  nesciunt id tempora. Neque delectus error nesciunt
-                  necessitatibus quae eaque fuga eum commodi, perspiciatis
-                  itaque a sunt culpa explicabo aspernatur veniam magnam ratione
-                  laudantium soluta recusandae, aliquam dicta? Consectetur quo
-                  ullam ut corporis nobis veritatis sed.
-                </p>
+                <p>{content ? content.replace(/(<([^>]+)>)/gi, '') : null}</p>
               </div>
 
               <div className="flex flex-row justify-between items-center">

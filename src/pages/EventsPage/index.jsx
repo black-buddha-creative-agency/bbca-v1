@@ -32,6 +32,7 @@ const EventPage = props => {
                     node {
                       title
                       slug
+                      content
                       eventMeta {
                         isopen
                         eventDate

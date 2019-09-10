@@ -201,13 +201,14 @@ i {
   background: transparent;
 }
 a {
-  color: #162466;
+  /* color: #162466; */
+  color: #ada4a4;
   text-decoration: none;
   border-bottom: 0.2rem solid transparent;
 }
 a:hover {
   transition: all 0.2s ease;
-  color: #ada4a4;
+  color: #162466;
 }
 .active {
   transition: all 0.2s ease;
@@ -602,6 +603,9 @@ img {
   width: 50%;
   margin-top: 176px;
   margin-bottom: 176px;
+}
+
+.photo-gallery.event-middle {
 }
 
 .image-columns.right {
