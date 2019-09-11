@@ -18,7 +18,7 @@ const ArtistPage = props => {
             <Query
               query={gql`
                 {
-                  artists {
+                  artists(first: 100) {
                     edges {
                       node {
                         title

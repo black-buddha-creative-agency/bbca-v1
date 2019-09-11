@@ -11,10 +11,10 @@ class ArtistList extends Component {
     return this.state.artists.length ? (
       <div className="w-100 artists-3">
         {this.state.artists.map((artist, idx) => (
-          <>
-            <ArtistListItem artist={artist.node} key={idx} idx={idx} />
+          <div key={idx}>
+            <ArtistListItem artist={artist.node} idx={idx} />
             <br />
-          </>
+          </div>
         ))}
       </div>
     ) : (

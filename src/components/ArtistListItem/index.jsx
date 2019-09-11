@@ -16,7 +16,7 @@ const ArtistListItem = ({ artist, idx }) => {
           {title}
         </a>
       ) : (
-        <a style={{ cursor: 'default' }} href="#">
+        <a className="artist-list--item" style={{ cursor: 'default' }} href="#">
           {title}
         </a>
       )}
