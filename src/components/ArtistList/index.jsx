@@ -1,33 +1,25 @@
 import React, { Component } from 'react'
-import data from '../../services/Data'
+import Loader from 'react-loader-spinner'
 import ArtistListItem from '../ArtistListItem'
 
 class ArtistList extends Component {
   state = {
-    artists: []
-  }
-  onHover = idx => {
-    console.log(`${idx} is being hovered on boi`)
-  }
-  async handleGetArtists() {
-    const artists = await data.getAllArtists()
-    this.setState({ artists })
-  }
-  async componentDidMount() {
-    this.handleGetArtists()
+    artists: this.props.artists
   }
 
   render() {
-    return (
-      <div className="artists">
+    return this.state.artists.length ? (
+      <div className="w-100 artists-3">
         {this.state.artists.map((artist, idx) => (
-          <ArtistListItem
-            artist={artist}
-            key={artist._id}
-            idx={idx}
-            onHover={this.onHover}
-          />
+          <div key={idx}>
+            <ArtistListItem artist={artist.node} idx={idx} />
+            <br />
+          </div>
         ))}
+      </div>
+    ) : (
+      <div className="pa5 mt5 tc w-100 h-100 flex flex-row justify-center items-center">
+        <Loader type="Oval" color="#ada4a4" height={80} width={80} />
       </div>
     )
   }

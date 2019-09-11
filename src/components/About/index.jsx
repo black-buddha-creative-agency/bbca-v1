@@ -31,11 +31,20 @@ const About = () => {
                 <strong>Selected Press</strong>
                 <br />
                 <a
+                  className="mr2"
                   href="https://www.houstonchronicle.com/life/style/luxe-life/article/India-Lovejoy-builds-bridges-with-the-Union-art-13030375.php"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Houston Chronicle
+                </a>
+                <a
+                  className="mr2"
+                  href="http://papercitymagazine.uberflip.com/i/975393-may-2018-houston"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Paper City Magazine
                 </a>
               </p>
             </div>

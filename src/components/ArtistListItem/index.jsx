@@ -1,15 +1,26 @@
 import React from 'react'
 
-const ArtistListItem = ({ artist, onHover, idx }) => {
-  const { first_name, last_name, link } = artist
+const ArtistListItem = ({ artist, idx }) => {
+  const { title, artistMeta } = artist
+  const { link } = artistMeta
   return (
-    <>
-      <div>
-        <a rel="noopener noreferrer" target="_blank" href={`https://${link}`}>
-          <h2 className="text-h2 artist-list--item">{`${first_name} ${last_name}`}</h2>
+    <div className="mb3 mr4">
+      {link ? (
+        <a
+          className="artist-list--item"
+          style={{ cursor: 'ne-resize' }}
+          rel="noopener noreferrer"
+          target="_blank"
+          href={`https://${link}`}
+        >
+          {title}
         </a>
-      </div>
-    </>
+      ) : (
+        <a className="artist-list--item" style={{ cursor: 'default' }} href="#">
+          {title}
+        </a>
+      )}
+    </div>
   )
 }
 

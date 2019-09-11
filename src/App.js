@@ -1,93 +1,31 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import ApolloClient from 'apollo-boost'
+import { ApolloProvider } from 'react-apollo'
 
+import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import EventsPage from './pages/EventsPage'
+import EventDetailPage from './pages/EventDetailPage'
 import ArtistsPage from './pages/ArtistsPage'
-import SignUpPage from './pages/SignUpPage'
-import LoginPage from './pages/LoginPage'
-import AdminPage from './pages/AdminPage'
-import userService from './services/User'
 
-const Test = ({ match }) => {
-  return <div className="tc">{match.params.id}</div>
-}
+const client = new ApolloClient({
+  uri: 'http://localhost:8888/graphql'
+})
 
-class App extends Component {
-  state = {
-    user: userService.getUser()
-  }
-
-  handleLogout = () => {
-    userService.logout()
-    this.setState({ user: null })
-  }
-
-  handleSignupOrLogin = () => {
-    this.setState({ user: userService.getUser() })
-  }
-  render() {
-    return (
+const App = () => {
+  return (
+    <ApolloProvider client={client}>
       <Router>
-        <Route
-          exact
-          path="/"
-          render={props => (
-            <HomePage user={this.state.user} handleLogout={this.handleLogout} />
-          )}
-        />
-        <Route
-          path="/events"
-          render={props => (
-            <EventsPage
-              user={this.state.user}
-              handleLogout={this.handleLogout}
-            />
-          )}
-        />
-        <Route
-          path="/artists"
-          render={props => (
-            <ArtistsPage
-              user={this.state.user}
-              handleLogout={this.handleLogout}
-            />
-          )}
-        />
-        <Route
-          path="/signup"
-          render={({ history }) => (
-            <SignUpPage
-              history={history}
-              user={this.state.user}
-              handleLogout={this.handleLogout}
-              handleSignupOrLogin={this.handleSignupOrLogin}
-            />
-          )}
-        />
-        <Route
-          path="/login"
-          render={({ history }) => (
-            <LoginPage
-              history={history}
-              user={this.state.user}
-              handleLogout={this.handleLogout}
-              handleSignupOrLogin={this.handleSignupOrLogin}
-            />
-          )}
-        />
-        <Route
-          path="/buddha"
-          render={props => (
-            <>
-              <Route path={`${props.match.url}/`} component={AdminPage} />
-              <Route path={`${props.match.url}/:id`} component={Test} />
-            </>
-          )}
-        />
+        <Layout>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/events" component={EventsPage} />
+          <Route path="/event/:slug" component={EventDetailPage} />
+          <Route path="/artists" component={ArtistsPage} />
+        </Layout>
       </Router>
-    )
-  }
+    </ApolloProvider>
+  )
 }
 
 export default App

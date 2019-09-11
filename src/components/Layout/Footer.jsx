@@ -27,30 +27,6 @@ const Footer = props => {
               </h1>
             </div>
             <div className="grid-block--footer-right">
-              {props.user ? (
-                <>
-                  <p className="footer-link">
-                    Welcome, {props.user.user.first_name}{' '}
-                  </p>
-
-                  {props.user.user.isAdmin ? (
-                    <Link to="/buddha" className="footer-link">
-                      Admin Portal
-                    </Link>
-                  ) : null}
-                  <Link
-                    to=""
-                    onClick={props.handleLogout}
-                    className="footer-link"
-                  >
-                    Log out
-                  </Link>
-                </>
-              ) : (
-                <Link to="/login" className="footer-link">
-                  Log in
-                </Link>
-              )}
               {footer.map((item, idx) => (
                 <a
                   key={idx}
