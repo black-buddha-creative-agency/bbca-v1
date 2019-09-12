@@ -4,7 +4,7 @@ const ArtistListItem = ({ artist, idx }) => {
   const { title, artistMeta } = artist
   const { link } = artistMeta
   return (
-    <div className="mb3 mr4">
+    <div className="mv2 mr4">
       {link ? (
         <a
           className="artist-list--item"
@@ -13,11 +13,11 @@ const ArtistListItem = ({ artist, idx }) => {
           target="_blank"
           href={`https://${link}`}
         >
-          {title}
+          <h3>{title}</h3>
         </a>
       ) : (
         <a className="artist-list--item" style={{ cursor: 'default' }} href="#">
-          {title}
+          <h3>{title}</h3>
         </a>
       )}
     </div>
