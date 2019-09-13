@@ -26,16 +26,16 @@ class EventDetailPage extends Component {
                 <div className="grid-block--title flex flex-column">
                   <div>
                     <h1 className="text-h2 mb5 text-accent--2">
-                      {props.data.event.title}
+                      {this.props.data.event.title}
                     </h1>
                     <h2 className="text-accent">
-                      {props.data.event.eventMeta.eventDate}
+                      {this.props.data.event.eventMeta.eventDate}
                     </h2>
                     <div className="ba bw2 br-0 bb-0 bl-0 b--black b--solid pt3 mb4 grid-block--title flex flex-column">
                       <div className="mt3 mb4 flex flex-row ">
-                        {props.data.event.eventMeta.exhibitionType.length >
+                        {this.props.data.event.eventMeta.exhibitionType.length >
                         1 ? (
-                          props.data.event.eventMeta.exhibitionType.map(
+                          this.props.data.event.eventMeta.exhibitionType.map(
                             (type, idx) => (
                               <p
                                 className="mr2"
@@ -48,7 +48,7 @@ class EventDetailPage extends Component {
                           )
                         ) : (
                           <h3 className="mt3 mb2 ">
-                            {props.data.event.eventMeta.exhibitionType}
+                            {this.props.data.event.eventMeta.exhibitionType}
                           </h3>
                         )}
                       </div>
@@ -57,12 +57,10 @@ class EventDetailPage extends Component {
 
                       <div className="flex flex-column">
                         <div className="artists mv2">
-                          {props.data.event.eventMeta.artists.map(
+                          {this.props.data.event.eventMeta.artists.map(
                             (artist, idx) => (
                               <h5 className="pv2" key={idx}>
                                 {artist} <br />
-
-
                               </h5>
                             )
                           )}
@@ -72,14 +70,14 @@ class EventDetailPage extends Component {
 
                     <div className=" grid-block--title flex flex-column">
                       <p className="mb2 text-accent">
-                        {props.data.event.eventMeta.curators.length > 2
+                        {this.props.data.event.eventMeta.curators.length > 2
                           ? 'Curators'
                           : 'Curator'}
                       </p>
 
                       <div className="flex flex-column">
                         <div className="artists mv2">
-                          {props.data.event.eventMeta.curators.map(
+                          {this.props.data.event.eventMeta.curators.map(
                             (curator, idx) => (
                               <h5 className="pv2" key={idx}>
                                 {curator} <br />
