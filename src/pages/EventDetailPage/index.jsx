@@ -61,6 +61,8 @@ class EventDetailPage extends Component {
                             (artist, idx) => (
                               <h5 className="pv2" key={idx}>
                                 {artist} <br />
+
+
                               </h5>
                             )
                           )}
