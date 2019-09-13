@@ -10,7 +10,7 @@ import EventDetailPage from './pages/EventDetailPage'
 import ArtistsPage from './pages/ArtistsPage'
 
 const client = new ApolloClient({
-  uri: 'http://localhost:8888/graphql'
+  uri: 'http://api.blackbuddhacreativeagency.com/graphql'
 })
 
 const App = () => {
