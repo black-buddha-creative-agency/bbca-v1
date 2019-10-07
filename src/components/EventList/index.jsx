@@ -7,6 +7,7 @@ class EventList extends Component {
   state = {
     events: this.props.events
   }
+  
   handleClick = idx => {
     let events = this.state.events
     let index = idx
