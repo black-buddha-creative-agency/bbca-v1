@@ -635,12 +635,15 @@ img {
 .event-list--item:hover {
   transition: all 0.2s ease;
   border-top: #ada4a4 1px solid;
+  cursor: pointer;
 }
 .event-list--item:hover p,
 .open {
   transition: all 0.2s ease;
   color: #ada4a4;
+  cursor: pointer;
 }
+
 .event-collectionList--wrapper {
   margin-top: 32px;
   margin-bottom: 32px;

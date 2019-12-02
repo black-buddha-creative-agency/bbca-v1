@@ -37,7 +37,7 @@ const EventPage = props => {
                         isopen
                         eventDate
                         eventImages {
-                          sourceUrl
+                          sourceUrl(size: MEDIUM_LARGE)
                         }
                         socialLinks {
                           linkText
