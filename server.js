@@ -8,4 +8,14 @@ const app = express();
 app.use(logger("dev"));
 app.use(express.json());
 
-app.use(favicon(path.join(__dirname, '')))
+app.use(favicon(path.join(__dirname, "build/favicon_io", "favicon.ico")));
+
+app.get("/*", function(req, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
+const port = process.env.PORT || 8080;
+
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
+});
