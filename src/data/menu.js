@@ -1,4 +1,4 @@
-// // TODO: Add menu data using the following structure:
+
 
 const linkClass = 'nav-link'
 const activeClass = 'active'

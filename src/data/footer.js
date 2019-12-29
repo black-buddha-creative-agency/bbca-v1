@@ -1,4 +1,3 @@
-// // TODO: Add footer data using the following structure:
 
 const linkClass = 'footer-link'
 const footer = [
