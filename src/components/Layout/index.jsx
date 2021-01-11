@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useContext } from "react";
 
-import Header from './Header'
-import Footer from './Footer'
+import Header from "./Header";
+import Footer from "./Footer";
+import { HomePageContext } from "../../data/context";
 
-const Layout = props => {
-  return (
-    <>
-      <Header />
-      {props.children}
-      <Footer {...props} />
-    </>
-  )
-}
+const Layout = (props) => {
+	const [homePage, loading] = useContext(HomePageContext);
+	return (
+		<>
+			<Header />
+			{props.children}
+			<Footer {...props} data={homePage?.Footer} />
+		</>
+	);
+};
 
-export default Layout
+export default Layout;
