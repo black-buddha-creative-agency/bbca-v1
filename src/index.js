@@ -4,12 +4,12 @@ import "./index.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 ReactDOM.render(
-  <Router>
-    <Route component={App} />
-  </Router>,
-  document.getElementById("root")
+	<Router>
+		<App />
+	</Router>,
+	document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
